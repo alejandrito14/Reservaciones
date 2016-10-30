@@ -23,7 +23,7 @@
         <!-- JQVMap -->
 
         <!-- Custom Theme Style -->
-        <link href="../Resource/build/css/custom.min.css" rel="stylesheet">
+        <link href="../Resource/build/css/custom.css" rel="stylesheet">
     </head>
 
     <body class="nav-md">
