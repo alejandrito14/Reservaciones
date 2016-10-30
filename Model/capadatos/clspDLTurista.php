@@ -84,15 +84,23 @@ class clspDLTurista {
     }
 
     public static function inicio_sesion($vmySql, $vflturistas) {
-   
-        $consulta = $vmySql->consulta("SELECT * FROM c_usuario where cmpcorreo=' . $vflturistas->correo . '  and cmpcontrasena='.$vflturistas->contrasena .' ");
-        if ($vmySql->num_rows($consulta) > 0) {
-            
-            return 1;
-        } else {
 
-            return 0;
+        $consulta = $vmySql->consulta("SELECT id_usuario FROM c_usuario where cmpcorreo=' . $vflturistas->correo . '  and cmpcontrasena='.$vflturistas->contrasena .' ");
+    
+         if ($mysql->num_rows($consulta) > 0) {
+            while ($resultados = $mysql->fetch_array($consulta)) {
+               
+
+
+                $vflturista->idusuario = $resultados['id_usuario'];
+                
+                //  echo json_encode($coleccion);
+            }
+            return 1;
         }
+
+        return 0;
+        
     }
 
 }
