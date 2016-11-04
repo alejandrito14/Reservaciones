@@ -55,15 +55,27 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                
+                   <li><a><i class="fa fa-home"></i> Servicios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="">Dashboard</a></li>
-                      <li><a href="">Dashboard2</a></li>
-                      <li><a href="">Dashboard3</a></li>
+                      <li><a href="">Cabañas</a></li>
+                      <li><a href="">Actividades</a></li>
+                      <li><a href="">Paquetes</a></li>
                     </ul>
                   </li>
-                
                   
+                    <li><a><i class="fa fa-home"></i> Reservaciones <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="">Reservaciones</a></li>
+                     
+                    </ul>
+                  </li>
+                    <li><a><i class="fa fa-home"></i> Turistas <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="">Turistas</a></li>
+                     
+                    </ul>
+                  </li>
                   
                   
                 </ul>
