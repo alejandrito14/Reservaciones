@@ -19,7 +19,7 @@ function ingreso()
 
 
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: url + "/login",
         dataType: "JSON",
         data: JSON.stringify(datosform),

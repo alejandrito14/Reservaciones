@@ -7,52 +7,19 @@
  */
 
 /**
- * Description of clscPaquete
+ * Description of clscFLPaquete
  *
  * @author Alejandro hdez g
  */
 class clscFLPaquete {
-    
-    public $idPaquete;
-    public $nombrePaquete;
-    public $Tarifa;
-    public $Detalle;
-    
-      public function __construct() {
-          $this->idPaquete;
-          $this->nombrePaquete;
-          $this->Tarifa;
-          $this->Detalle;
-         
-     }
-
-     public function __destruct() {
-         unset($idPaquete);
-         unset($nombrePaquete);
-         unset($Tarifa);
-         unset($Detalle);
-
-
-     }
-     
-       public function __get($atributo) {
-        if (isset($atributo)) {
-            throw new Exception("Propiedad no existe : $valor");
-        } else {
-            return $this->$atributo;
-        }
+    //put your code here
+    public $paquetes;
+    public function __construct() {
+        $this->paquetes=array();
     }
 
-    public function __set($atributo, $valor) {
-      if(isset($atributo)){
-          throw new Exception("Propiedad no existe: $valor");
-      
-      }else{
-        
-        
-        $this->$atributo = $valor;
-      }
+    public function __destruct() {
+        unset($paquetes);
     }
 
-    
 }

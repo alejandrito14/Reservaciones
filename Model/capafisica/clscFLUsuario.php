@@ -19,8 +19,7 @@ class clscFLUsuario {
     public  $usuarios;
     public function __construct() {
         $this->usuarios=array();
-        
-    }
+           }
 
     public function __destruct() {
         

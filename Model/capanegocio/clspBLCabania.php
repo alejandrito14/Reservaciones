@@ -4,9 +4,10 @@
 /**
  * 
  */
-include '../Model/capadatos/clspDLTurista.php';
+include_once '../Model/capadatos/clspDLCabania.php';
+include_once '../Model/conexcion.php';
 
-class clspBLTurista {
+class clspBLCabania {
 
     function __construct() {
         # code...
@@ -16,19 +17,16 @@ class clspBLTurista {
         
     }
 
-    public static function listar_turista($coleccion) {
+    public static function listar_cabania($coleccion) {
 
 
         $mysql = new Mysql();
         $mysql->AbrirConexion();
 
-        $result = clspDLTurista::listarTuristas($mysql, $coleccion);
-        //cambiar nombre a clscDLTurista
+        $result = clspDLCabania::listarCabania($mysql, $coleccion);
+        
         return $result;
-        /* $obj = new productoscd();
-          $result = $obj->lista_productos();
-
-          return $result; */
+      
         $mysql->CerrarConexion();
     }
 
@@ -66,19 +64,15 @@ class clspBLTurista {
     public static function iniciar_sesion($vflturistas) {
         $vmySql = new Mysql();
         $vmySql->AbrirConexion();
-        
-        $resul = clspDLTurista::inicio_sesion($vmySql, $vflturistas);
-          
-        
-        if ($resul==1) {
+
+
+        if ($resul = clspDLTurista::inicio_sesion($vmySql, $vflturistas) == 1) {
             
-         echo ' ha iniciado sesion';
-         return 1;
-        } else{
-             echo 'no ha iniciado sesion';
-             return 0;
+            
+        } 
+        else {
+            
         }
-      
         
          $vmySql->CerrarConexion();
     }

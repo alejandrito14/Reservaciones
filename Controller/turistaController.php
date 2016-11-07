@@ -99,26 +99,38 @@ $app->post("/turistas", function ($vrequest) {
 });
 
 
-$app->get("/login", function ($vrequest) {
+$app->post("/login", function ($vrequest) {
 
     $vdataResponse = array();
 
     try {
 
-
+  
         $vbody = $vrequest->getBody();
         $ventrada = json_decode($vbody);
-        var_dump(json_encode($ventrada));
+  
+        
         $vflturistas = new clspFLTurista();
         $vflturistas->correo = $ventrada->txtemail;
         $vflturistas->contrasena = $ventrada->txtcontrasena;
-
+            var_dump(json_encode($vflturistas));
         $vstatus = clspBLTurista::iniciar_sesion($vflturistas);
+        
+        if($vstatus==1){
+            
+    
+            
+           
+        }
+        else{
+            
+            
+        }
     } catch (Exception $exception) {
 
         $vdataResponse["messageNumber"] = -100;
     }
-
+ 
     echo json_encode($vdataResponse);
 });
 

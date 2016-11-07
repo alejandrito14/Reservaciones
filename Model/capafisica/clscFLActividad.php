@@ -7,34 +7,20 @@
  */
 
 /**
- * Description of clscActividad
+ * Description of clscFLActividad
  *
  * @author Alejandro hdez g
  */
 class clscFLActividad {
-    public $idActividad;
-    public $Nombre_Actividad;
-    public $Tarifa;
-    public $Detalle;
-    
-      public function __construct() {
-         
-     }
+    //put your code here
+    public $actividades;
+    public function __construct() {
+        $this->actividades=array();
+    }
 
-     public function __destruct() {
-         
-     }
-     
-     public function __get($atributo) {
-          return $this->$atributo;
-         
-     }
+    public function __destruct() {
+        unset($actividades);
+    }
 
-     public function __set($atributo, $valor) {
-          $this->$atributo = $valor;
-         
-     }
-
-    
     
 }
