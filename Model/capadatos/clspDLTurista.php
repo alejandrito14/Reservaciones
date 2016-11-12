@@ -84,23 +84,23 @@ class clspDLTurista {
     }
 
     public static function inicio_sesion($vmySql, $vflturistas) {
-     
+
 
         $consulta = $vmySql->consulta("SELECT * FROM `c_usuario` WHERE cmpcorreo=\"$vflturistas->correo\" AND cmpcontrasena=\"$vflturistas->contrasena\"");
 
         if ($vmySql->num_rows($consulta) == 0) {
 
-          
+
             return 0;
         } else {
             while ($resultados = $vmySql->fetch_array($consulta)) {
 
                 $vflturistas->idusuario = $resultados['id_usuario'];
-               // echo json_encode($vflturistas);
+                // echo json_encode($vflturistas);
             }
             return 1;
         }
     }
+
 }
-    
-    ?>
+?>

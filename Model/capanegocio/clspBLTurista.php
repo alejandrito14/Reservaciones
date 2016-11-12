@@ -72,10 +72,10 @@ class clspBLTurista {
         
         if ($resul==1) {
             
-         echo ' ha iniciado sesion';
+         //echo ' ha iniciado sesion';
          return 1;
         } else{
-             echo 'no ha iniciado sesion';
+             //echo 'no ha iniciado sesion';
              return 0;
         }
       

@@ -31,7 +31,7 @@ try{
     $result = $obj->listar_paquete($coleccion);
     if ($result == 1) {
         
-        $dataResponse[]=$coleccion;
+        $dataResponse['paquetes']=$coleccion;
     }
   }catch(Exception $exception){
 
@@ -43,6 +43,31 @@ $dataResponse["Paquetes"]=-100;
 
 
 });
+
+
+$app->delete("/paquetes/{idpaquete}", function ($vresponse) {
+    
+    $id=$vresponse->getAttribute('idpaquete');
+    
+  
+    $dataResponse=array();
+    try{
+        $obj=new clspBLPaquete();
+        $result=$obj->eliminar_paquete($id);
+      if($result=1){
+          
+          echo 'hola';
+      }
+                             
+        }catch (Exception $exception){
+        $dataResponse["cabania"]=-100;
+        
+        
+    }
+    
+     echo json_encode($dataResponse );
+});
+
 
 
 

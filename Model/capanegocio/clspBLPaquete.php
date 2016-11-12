@@ -36,4 +36,31 @@ class clspBLPaquete {
       
         $mysql->CerrarConexion();
     }
+    
+        public static function eliminar_paquete($id){
+        $vmysql=new Mysql();
+        $vmysql->AbrirConexion();
+        
+        $result=  clspDLPaquete::eliminar_paquete($vmysql, $id);
+        
+        if($result==1){
+            
+             return $result;
+            
+        }else{
+            
+            return 0;
+        }
+       
+      
+        $mysql->CerrarConexion();
+        
+        
+    }
+    
+    
+    
+    
+    
+    
 }

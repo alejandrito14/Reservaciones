@@ -24,13 +24,25 @@ class clspBLCabania {
         $mysql->AbrirConexion();
 
         $result = clspDLCabania::listarCabania($mysql, $coleccion);
-        
+
         return $result;
-      
+
         $mysql->CerrarConexion();
     }
 
-    public static function insertar_turista($vflturistas) {
+    public static function eliminar_cabania($id) {
+        $vmysql = new Mysql();
+        $vmysql->AbrirConexion();
+
+        $result = clspDLCabania::eliminar_cabania($vmysql, $id);
+
+
+        return $result;
+
+        $mysql->CerrarConexion();
+    }
+
+    public static function insertar_cabania($vflturistas) {
 
         $vmySql = new Mysql();
         $vmySql->AbrirConexion();
@@ -51,30 +63,13 @@ class clspBLCabania {
                 echo 'se hizo roollback';
                 return -1;
             }
-        } 
-        else {
+        } else {
 
             return 0;
         }
         $vmySql->CerrarConexion();
 
         return 1;
-    }
-
-    public static function iniciar_sesion($vflturistas) {
-        $vmySql = new Mysql();
-        $vmySql->AbrirConexion();
-
-
-        if ($resul = clspDLTurista::inicio_sesion($vmySql, $vflturistas) == 1) {
-            
-            
-        } 
-        else {
-            
-        }
-        
-         $vmySql->CerrarConexion();
     }
 
 }

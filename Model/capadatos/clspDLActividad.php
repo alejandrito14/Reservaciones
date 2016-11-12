@@ -14,9 +14,10 @@
 include_once '../Model/capafisica/clspFLActividad.php';
 
 class clspDLActividad {
+
     //put your code here
-    
-      public static function listarActividades($mysql, $coleccion) {
+
+    public static function listarActividades($mysql, $coleccion) {
 
         $consulta = $mysql->consulta("SELECT * FROM c_actividad");
 
@@ -28,8 +29,8 @@ class clspDLActividad {
                 $actividad->nombreActividad = $resultados['cmpnombreActividad'];
                 $actividad->tarifa = $resultados['cmptarifa'];
                 $actividad->detalle = $resultados['cmpdetalle'];
-                
-                
+
+
 
 
                 $coleccion->actividades [] = $actividad;
@@ -40,6 +41,24 @@ class clspDLActividad {
 
         return 0;
     }
-    
-    
+
+    public static function eliminar_actividad($vmysql, $id) {
+        try {
+            $consulta = $vmysql->consulta("DELETE FROM c_actividad WHERE id_actividad=\"$id\" ");
+
+            if ($vmysql->consulta($consulta)) {
+
+                if ($vmysql->ObtenerNumeroFilasAfectadas() != 1) {
+                    return 0;
+                }
+            }
+            unset($consulta, $vmysql);
+
+            return 1;
+        } catch (Exception $vexcepcion) {
+
+            throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
+        }
+    }
+
 }

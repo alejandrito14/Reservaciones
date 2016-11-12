@@ -57,7 +57,7 @@
                   <input type="password" class="form-control" id="txtcontrasena" name="txtcontrasena" placeholder="Password" required="" />
               </div>
               <div>
-               <button id="btningreso" class="btn btn-success" type="button"  >INGRESAR</button>                
+                  <button id="btningreso" type="submit" class="btn btn-success"   >INGRESAR</button>                
                 
                 
                 <a class="reset_pass" href="#">Perdiste tu contraseña?</a>

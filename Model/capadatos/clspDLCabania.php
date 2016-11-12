@@ -38,6 +38,30 @@ class clspDLCabania {
 
         return 0;
     }
+    
+    
+    public static function eliminar_cabania($vmysql,$id){
+        try{
+        $consulta=$vmysql->consulta( "DELETE FROM c_cabania WHERE id_cabania=\"$id\" ");
+        
+        if ($vmysql->consulta($consulta)) {
+
+                if ($vmysql->ObtenerNumeroFilasAfectadas() != 1) {
+                    return 0;
+                }
+            }
+         unset($consulta, $vmysql);
+
+            return 1;
+        
+        }catch(Exception $vexcepcion){
+            
+               throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
+ 
+            
+        }
+        
+    }
 
 //    public static function agregarTurista($vmySql, $vflturistas) {
 ////             $vmySql = new MySql();

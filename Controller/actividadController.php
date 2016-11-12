@@ -30,7 +30,7 @@ try{
     $result = $obj->listar_Actividades($coleccion);
     if ($result == 1) {
         
-        $dataResponse[]=$coleccion;
+        $dataResponse['actividades']=$coleccion;
     }
   }catch(Exception $exception){
 
@@ -41,6 +41,30 @@ $dataResponse["actividad"]=-100;
   echo json_encode($dataResponse );
 
 
+});
+
+
+$app->delete("/actividades/{idactividad}", function ($vresponse) {
+    
+    $id=$vresponse->getAttribute('idactividad');
+    
+  
+    $dataResponse=array();
+    try{
+        $obj=new clspBLActividad;
+        $result=$obj->eliminar_actividad($id);
+      if($result=1){
+          
+          echo 'hola';
+      }
+                             
+        }catch (Exception $exception){
+        $dataResponse["actividad"]=-100;
+        
+        
+    }
+    
+     echo json_encode($dataResponse );
 });
 
 

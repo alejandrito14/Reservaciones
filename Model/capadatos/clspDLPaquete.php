@@ -47,6 +47,32 @@ class clspDLPaquete {
 
         return 0;
     }
+    
+     public static function eliminar_paquete($vmysql,$id){
+        try{
+        $consulta=$vmysql->consulta( "DELETE FROM c_paquete WHERE id_paquete=\"$id\" ");
+        
+        if ($vmysql->consulta($consulta)) {
+
+                if ($vmysql->ObtenerNumeroFilasAfectadas() != 1) {
+                    return 0;
+                }
+            }
+         unset($consulta, $vmysql);
+
+            return 1;
+        
+        }catch(Exception $vexcepcion){
+            
+               throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
+ 
+            
+        }
+        
+    }
+
+    
+    
 
     
 }

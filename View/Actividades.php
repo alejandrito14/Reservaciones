@@ -65,9 +65,9 @@
 
                                     <li><a><i class="fa fa-edit"></i> Servicios <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="cabañas.html">Cabañas</a></li>
-                                            <li><a href="Paquetes.html">Paquetes</a></li>
-                                            <li><a href="">Actividades</a></li>
+                                            <li><a href="cabanias.php">Cabañas</a></li>
+                                            <li><a href="Paquetes.php">Paquetes</a></li>
+                                            <li><a href="Actividades.php">Actividades</a></li>
                                         </ul>
                                     </li>
 
@@ -221,7 +221,7 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Seleccion de Actividades</h2>
+                    <h2>Catálogos de Actividades</h2>
                     
                     <div class="clearfix"></div>
                   </div>

@@ -58,7 +58,7 @@
                 
                    <li><a><i class="fa fa-home"></i> Servicios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="">Cabañas</a></li>
+                        <li><a href="cabaniasAdmin.php">Cabañas</a></li>
                       <li><a href="">Actividades</a></li>
                       <li><a href="">Paquetes</a></li>
                     </ul>

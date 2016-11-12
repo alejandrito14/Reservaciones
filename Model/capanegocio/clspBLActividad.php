@@ -36,7 +36,20 @@ class clspBLActividad {
         $mysql->CerrarConexion();
     }
     
-    
+     public static function eliminar_actividad($id){
+        $vmysql=new Mysql();
+        $vmysql->AbrirConexion();
+        
+        $result=  clspDLActividad::eliminar_actividad($vmysql, $id);
+        
+        
+        return $result;
+      
+        $mysql->CerrarConexion();
+        
+        
+    }
+
     
     
 }
