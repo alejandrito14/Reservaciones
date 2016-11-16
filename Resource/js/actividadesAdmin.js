@@ -21,13 +21,16 @@ function cargarTabla() {
 
         $.each(vresponse.actividades.actividades, function (i, actividades) {
             // console.log(cabanias);
+            
+       var datos =actividades.idActividad + "*" + actividades.nombreActividad + "*" + actividades.tarifa+ "*" + actividades.detalle;
+
             var actividades = "<tr>"
 
                     + "<td>" + actividades.idActividad + "</td>"
                     + "<td>" + actividades.nombreActividad + "</td>"
                     + "<td> $ " + actividades.tarifa + "</td>"
                     + "<td> " + actividades.detalle + "</td>"
-                    + "<td><button type='button 'class='btn btn-danger btn-sm'  onclick='eliminar(" + '"' + actividades.idActividad + '"' + ")' >Eliminar</button> <buton type='button ' class='btn btn-info btn-sm'>Editar</button> </td>"
+                    + "<td><button type='button 'class='btn btn-danger btn-sm'  onclick='eliminar(" + '"' + actividades.idActividad + '"' + ")' >Eliminar</button> <buton type='button ' class='btn btn-info btn-sm' data-toggle='modal' data-target='#EditarA' onclick='mostrar(" + '"' + datos + '"' + ");' >Editar</button> </td>"
                     + "</tr>";
 
             $(actividades).appendTo("#tablaActividad tbody");

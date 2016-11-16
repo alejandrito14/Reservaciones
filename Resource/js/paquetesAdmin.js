@@ -20,7 +20,8 @@ function cargarTabla(){
        // alert(vresponse.cabanias.cabanias.length);
         $.each(vresponse.paquetes.paquetes, function (i, paquetes) {
            // console.log(cabanias);
-                             
+           var datos = paquetes.idPaquete + "*" + paquetes.nombrePaquete + "*" + paquetes.tarifa + "*" + paquetes.detalle;
+                      
            
             var paquetes = "<tr>"
 

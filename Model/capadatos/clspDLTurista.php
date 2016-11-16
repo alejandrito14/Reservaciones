@@ -76,7 +76,7 @@ class clspDLTurista {
 
 
             unset($vsql, $vmySql);
-
+             echo '1';
             return 1;
         } catch (Exception $vexcepcion) { //It catches exception /It returns exception code catched
             throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());

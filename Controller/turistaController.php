@@ -46,7 +46,7 @@ $app->get("/turistas", function () use ($app, $result) {
 
         if ($result == 1) {
 
-            $dataResponse[] = $coleccion;
+            $dataResponse["turistas"] = $coleccion;
         }
     } catch (Exception $exception) {
 

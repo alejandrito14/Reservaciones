@@ -36,14 +36,11 @@
                     <a href="#!" class="brand-logo"><i class="material-icons"><img src="../Resource/img/logo.png" class="imagen"></i></a>
                     <ul class="right hide-on-med-and-down">
                     <!-- Dropdown Structure -->
-                    <ul id="dropdown1" class="dropdown-content">
-                      <li class="divider"></li>
-                      <li><a href="panel_usuario.html">Visitanos</a></li>
-                      <li class="divider"></li>
-                    </ul>
+                   <li><a href="panelTurista.php">Inicio</a></li>
+
                     <ul id="dropdown2" class="dropdown-content">
                       <li class="divider"></li>
-                      <li><a href="Cabañas_menu.php">Cabañas</a></li>
+                      <li><a href="Cabanias_menu.php">Cabañas</a></li>
                       <li><a href="#!">Paquetes</a></li>
                       
                       <li><a href="Actividades_menu.php">Actividades</a></li>
@@ -51,13 +48,12 @@
                     </ul>
                     <ul id="dropdown3" class="dropdown-content">
                       <li class="divider"></li>
-                      <li><a href="#!">Reserva aqui</a></li>
+                      <li><a href="turistaReservacion.php">Reserva aqui</a></li>
                       <li><a href="#!">Tus reservaciones</a></li>
                       <li class="divider"></li>
                       
                     </ul>
                       <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="small material-icons left">perm_identity</i> HOME <i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Servicios<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Reservaciones<i class="material-icons right">arrow_drop_down</i></a></li>
                     </ul>

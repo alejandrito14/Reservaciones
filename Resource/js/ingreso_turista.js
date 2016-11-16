@@ -8,7 +8,7 @@
 var url = '../Controller/turistaController.php';
 $(document).ready(function () {
    // $("#btningreso").attr("onclick", "ingreso()");
-   
+  
    $("#formingreso").validate({
        
        rules:

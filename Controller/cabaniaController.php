@@ -6,13 +6,52 @@
  * and open the template in the editor.
  */
 /* include '../Slim/Slim.php'; */
-include'../slim-3.3.0/autoload.php';
-include '../Model/capanegocio/clspBLCabania.php';
-include '../Model/capafisica/clscFLCabania.php';
+require_once ('../slim-3.3.0/autoload.php');
+require_once (dirname(dirname(__FILE__)) . '/Model/capafisica/clscFLCabania.php');
+
+//require_once (dirname(dirname(__FILE__)) . '/Model/capafisica/clspFLTurista.php');
+
+require_once (dirname(dirname(__FILE__)) . '/Model/capanegocio/clspBLCabania.php');
+
+
+
+
+
+//include'../slim-3.3.0/autoload.php';
+//include '../Model/capanegocio/clspBLCabania.php';
+//include '../Model/capafisica/clscFLCabania.php';
 
 
 //header("Content-Type: text/html;charset=utf-8");
 $app = new Slim\App();
+
+
+$app->post("/cabanias", function ($vrequest) {
+
+    $vdataResponse = array();
+
+    try {
+      
+        $vbody = $vrequest->getBody();
+        $ventrada = json_decode($vbody);
+
+
+        var_dump(json_encode($ventrada));
+
+        $vflcabania=new clspFLCabania();
+
+       $vflcabania->nombre=$ventrada->txtnombre;
+       $vflcabania->descripcion=$ventrada->txtdescripcion;
+       $vflcabania->tarifa=$ventrada->txttarifa;
+ 
+        $vstatus = clspBLCabania::insertar_cabania($vflcabania);
+    } catch (Exception $exception) {
+
+        $vdataResponse["messageNumber"] = -100;
+    }
+
+    echo json_encode($vdataResponse);
+});
 
 
 $app->get("/cabanias", function () use ($app, $result) {
@@ -36,9 +75,9 @@ $app->get("/cabanias", function () use ($app, $result) {
 });
 
 
-$app->delete("/cabanias/{idcabanias}", function ($vresponse) {
+$app->delete("/cabanias/{idcabania}", function ($vresponse) {
 
-    $id = $vresponse->getAttribute('idcabanias');
+    $id = $vresponse->getAttribute('idcabania');
 
 
     $dataResponse = array();
@@ -55,6 +94,45 @@ $app->delete("/cabanias/{idcabanias}", function ($vresponse) {
 
     echo json_encode($dataResponse);
 });
+
+
+
+$app->put('/cabanias/{idcabania}', function ($vrequest) {
+   
+     $vdataResponse = array();
+
+    try {
+
+   $vbody =$vrequest->getBody();
+   $ventrada=  json_decode($vbody);
+   
+  
+   //var_dump($ventrada);
+        $vflcabania = new clspFLCabania();
+
+        $vflcabania->idcabania=$ventrada->cabania;
+        $vflcabania->nombre=$ventrada->nombrec;
+        $vflcabania->descripcion=$ventrada->descripcion;
+        $vflcabania->tarifa=$ventrada->tarifa;
+        
+        
+        $vstatus = clspBLCabania::editar_cabania($vflcabania);
+        
+        if($vstatus==1){
+            
+            return 1;
+        }else{
+            return 0;
+        }
+        
+    } catch (Exception $exception) {
+
+        $vdataResponse["messageNumber"] = -100;
+    }
+
+    echo json_encode($vdataResponse);
+});
+
 
 
 

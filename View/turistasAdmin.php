@@ -12,7 +12,7 @@
        
        
         <script src="../Resource/js/jquery.min.js"></script>
-        <script src="../Resource/js/cabaniasAdmin.js"></script>
+        <script src="../Resource/js/turistasAdmin.js"></script>
         <!-- Bootstrap -->
         <link href="../Resource/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
@@ -228,7 +228,7 @@
                             <div class="col-md-12">
                                 <div class="x_panel">
                                     <div class="x_title">
-                                        <h2>Catálogo de cabañas</h2>
+                                        <h2>Catálogo de turistas</h2>
 
                                         <div class="clearfix"></div>
                                     </div>
@@ -245,16 +245,22 @@
                                                 </div>
 
                                                 <div class="col-xs-1">
-                                                    <button class="btn  btn-primary " id="btningresar" type="button"  data-toggle='modal' data-target='#insertarC' >Nuevo</button>
+                                                    <button class="btn  btn-primary " id="btningresar" type="button"  data-toggle='modal' data-target='#insertarT' >Nuevo</button>
 
                                                 </div>
                                             </div>
-                                            <table class="table table-bordered table-hover " id="tablaCabanias">
+                                            <table class="table table-bordered table-hover " id="tablaTuristas">
                                                 <thead>
-                                                <th>Id</th>
+                                                
                                                 <th>Nombre</th>
-                                                <th>descripcion</th>
-                                                <th>Tarifa</th>
+                                                <th>Apellido p</th>
+                                                <th>Apellido m</th>
+                                                <th>Correo</th>
+                                                <th>Telefono</th>
+                                                <th>Ciudad</th>
+                                                <th>Nacimiento</th>
+                                                
+                                                
                                                 <th>Opciones</th>    
                                                 </thead>
                                                 <tbody></tbody>
@@ -309,24 +315,34 @@
                     </div>
 
                         <!-- Modal insertar-->
-                        <div class="modal fade" id="insertarC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="insertarT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                    <h4 class="modal-title" id="myModalLabel2">Ingresar Cabaña</h4>
+                                    <h4 class="modal-title" id="myModalLabel2">Ingresar turista</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-group" id="formcabania" name="formcabania" >
+                                      <form class="form-group" id="agregarturista"  >
+                                    <input class="form-control" type="hidden" id="turista" name="turista"/>
 
-                                    <label class="control-label ">Nombre de  cabaña</label>
-                                    <input class="form-control" id="txtnombre" type="text" name="txtnombre"/>
-                                     <label class="control-label">Descripcion</label>
-                                    <input class="form-control" id="txtdescripcion" type="text" name="txtdescripcion"/>
-                                     <label class="control-label">Tarifa $</label>
-                                    <input class="form-control" id="txttarifa" type="text" name="txttarifa"/>
+                                    <label class="control-label">Nombre</label>
+                                  
+                                    <input class="form-control" id="nombret" name="nombret"/>
+                                     <label class="control-label">Apellido p</label>
+                                    <input class="form-control" id="apellidop" name="apellidop"/>
+                                     <label class="control-label">Apellido m</label>
+                                    <input class="form-control" id="apelidom" name="apellidom"/>
+                                     <label class="control-label">Correo </label>
+                                    <input class="form-control" id="correo" name="correo"/>
+                                     <label class="control-label">Telefono </label>
+                                    <input class="form-control" id="telefono" name="telefono"/>
+                                    <label class="control-label">Ciudad </label>
+                                    <input class="form-control" id="ciudad" name="ciudad"/>
+                                    <label class="control-label">Fecha Nacimiento </label>
+                                    <input class="form-control" type="date" id="fecha" name="fecha"/>
                                        <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                      <button id="btnguardar" class="btn btn-success" type="button"  >Guardar</button>                
@@ -342,26 +358,35 @@
                     
                     
                     <!-- Modal editar-->
-                    <div class="modal fade" id="EditarC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="EditarT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                    <h4 class="modal-title" id="myModalLabel">Editar Cabaña</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Editar Turista</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="form-group" id="editarCabania"  >
-                                    <input class="form-control" type="hidden" id="cabania" name="cabania"/>
+                                    <form class="form-group" id="editarturista"  >
+                                    <input class="form-control" type="hidden" id="turista" name="turista"/>
 
-                                    <label class="control-label">Nombre de  cabaña</label>
+                                    <label class="control-label">Nombre</label>
                                   
-                                    <input class="form-control" id="nombrec" name="nombrec"/>
-                                     <label class="control-label">Descripcion</label>
-                                    <input class="form-control" id="descripcion" name="descripcion"/>
-                                     <label class="control-label">Tarifa $</label>
-                                    <input class="form-control" id="tarifa" name="tarifa"/>
+                                    <input class="form-control" id="nombret" name="nombret"/>
+                                     <label class="control-label">Apellido p</label>
+                                    <input class="form-control" id="apellidop" name="apellidop"/>
+                                     <label class="control-label">Apellido m</label>
+                                    <input class="form-control" id="apelidom" name="apellidom"/>
+                                     <label class="control-label">Correo </label>
+                                    <input class="form-control" id="correo" name="correo"/>
+                                     <label class="control-label">Telefono </label>
+                                    <input class="form-control" id="telefono" name="telefono"/>
+                                    <label class="control-label">Ciudad </label>
+                                    <input class="form-control" id="ciudad" name="ciudad"/>
+                                    <label class="control-label">Fecha Nacimiento </label>
+                                    <input class="form-control" type="date" id="fecha" name="fecha"/>
+                                   
                                    
                                      </form>
                                 </div>

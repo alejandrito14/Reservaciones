@@ -30,12 +30,32 @@
 
     <body class="login">
 
-        <header>
+           <header>
             <nav>
                 <div class="nav-wrapper green">
                     <a href="#!" class="brand-logo"><i class="material-icons"><img src="../Resource/img/logo.png" class="imagen"></i></a>
                     <ul class="right hide-on-med-and-down">
+                    <!-- Dropdown Structure -->
+                   <li><a href="panelTurista.php">Inicio</a></li>
 
+                    <ul id="dropdown2" class="dropdown-content">
+                      <li class="divider"></li>
+                      <li><a href="Cabanias_menu.php">Cabañas</a></li>
+                      <li><a href="Paquetes_menu.php">Paquetes</a></li>
+                      
+                      <li><a href="#!">Actividades</a></li>
+                      <li class="divider"></li>
+                    </ul>
+                    <ul id="dropdown3" class="dropdown-content">
+                      <li class="divider"></li>
+                      <li><a href="turistaReservacion.php">Reserva aqui</a></li>
+                      <li><a href="#!">Tus reservaciones</a></li>
+                      <li class="divider"></li>
+                      
+                    </ul>
+                      <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Servicios<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Reservaciones<i class="material-icons right">arrow_drop_down</i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -106,9 +126,12 @@
                                         <div id="cabanias"> 
 
                                         </div>
-                                        <div>
+                                       <div class="col-md-6 col-md-offset-6">
+                                            <div class="">
                                             <button id="btnsiguiente"  class="btn btn-success"  type="button"   >Siguiente</button>                
-                                        </div>   
+                                        </div> 
+                                            
+                                        </div>
                                     </div>
                                 </div>
                             </div>
