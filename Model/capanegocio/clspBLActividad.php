@@ -36,6 +36,21 @@ class clspBLActividad {
         $mysql->CerrarConexion();
     }
     
+    
+    public static function insertar_actividad($vflactividad) {
+
+        $vmySql = new Mysql();
+        $vmySql->AbrirConexion();
+
+        if ($result = clspDLActividad::insertarActividad($vmySql, $vflactividad) == 1) {
+            echo '1';
+            return 1;
+        } else {
+            return 0;
+        }
+        $vmySql->CerrarConexion();
+    }
+    
      public static function eliminar_actividad($id){
         $vmysql=new Mysql();
         $vmysql->AbrirConexion();

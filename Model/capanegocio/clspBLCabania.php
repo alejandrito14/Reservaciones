@@ -29,18 +29,27 @@ class clspBLCabania {
 
         $mysql->CerrarConexion();
     }
+    
+    public static function listar_cabaniaporid($coleccion,$nombre){
+        
+        $mysql = new Mysql();
+        $mysql->AbrirConexion();
+
+        $result = clspDLCabania::listarCabaniaporid($mysql, $coleccion,$nombre);
+
+        return $result;
+
+        $mysql->CerrarConexion();
+    }
 
     public static function editar_cabania($vflcabania) {
         $vmySql = new Mysql();
         $vmySql->AbrirConexion();
 
-        if ($result = clspDLCabania::editarCabania($vmySql, $vflcabania) ==1) {
-            return 1;
-        } else {
-
-            return 0;
-        }
-
+        $result = clspDLCabania::editarCabania($vmySql, $vflcabania);
+          
+            return $result;
+        
         $vmySql->CerrarConexion();
     }
 

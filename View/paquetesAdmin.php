@@ -244,8 +244,7 @@
                                                 </div>
 
                                                 <div class="col-xs-1">
-                                                    <button class="btn  btn-primary " id="btningresar" type="button"  data-toggle='modal' data-target='#ingresarusuario' >Nuevo</button>
-
+                                                    <a href="ingresarPaquete.php" class="btn btn-primary" role="button">Nuevo</a>
                                                 </div>
                                             </div>
                                             <table class="table table-bordered table-hover " id="tablaPaquetes">
@@ -259,6 +258,8 @@
                                                 <tbody></tbody>
                                             </table>
 
+                                            
+                                            
                                             <!--
                                             cabañas colocacion
                                             <div class="col-md-55">

@@ -3,7 +3,8 @@
 var url = '../Controller/cabaniaController.php';
 
 $(document).ready(function () {
-     cargarTabla();
+   // buscarlistar('');
+   cargarTabla();
  $("#btneditar").attr("onclick", "editarC()");
 
     $("#btnguardar").attr("onclick", "guardarc()");
@@ -31,6 +32,48 @@ function cargarTabla() {
             $(cabanas).appendTo("#tablaCabanias tbody");
         });
     });
+}
+
+function buscarlistar(nombre){
+    
+     var nombre = $("#buscar").val();
+    
+     $("#tablaCabanias tbody").html("");
+
+    $.getJSON(url + "/cabanias"+ nombre, function (vresponse) {
+        // console.log(cabanias);
+        // alert(vresponse.cabanias.cabanias.length);
+        $.each(vresponse.cabanias.cabanias, function (i, cabanias) {
+            // console.log(cabanias);
+            var datos = cabanias.idcabania + "*" + cabanias.nombre + "*" + cabanias.descripcion + "*" + cabanias.tarifa;
+            var cabanas = "<tr>"
+                    + "<td>" + cabanias.idcabania + "</td>"
+                    + "<td>" + cabanias.nombre + "</td>"
+                    + "<td>" + cabanias.descripcion + "</td>"
+                    + "<td> $" + cabanias.tarifa + "</td>"
+                    + "<td><button type='button 'class='btn btn-danger btn-sm' '  onclick='eliminar(" + '"' + cabanias.idcabania + '"' + ")'>Eliminar</button> <buton  type='button' class='btn btn-info btn-sm' data-toggle='modal' data-target='#EditarC' onclick='mostrar(" + '"' + datos + '"' + ");'  >Editar</button> </td>"
+                    + "</tr>";
+            $(cabanas).appendTo("#tablaCabanias tbody");
+        });
+    });
+    
+    
+    
+//        $.ajax({
+//            type: 'GET',
+//            url: url + "/cabanias/" + idcabania,
+//            success: function (vresponse) {
+//              
+//              
+//              
+//            },
+//            error: function (verror) {
+//                alert('delete error');
+//            }
+//
+//        });
+       
+    
 }
 
 
@@ -108,13 +151,16 @@ function editarC() {
         dataType: "JSON",
         data: JSON.stringify(datosform),
         succes: function (vresponse) {
+          
+             
             
-            if(vresponse==1){
-            cargarTabla();
             alert("Se edito correctamente");
-        }
+            cargarTabla();
+             
         },
         error: function (verror) {
+                        alert("error");
+
 
         }
 

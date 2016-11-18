@@ -12,9 +12,11 @@
 
         <!-- Bootstrap -->
         <link href="../Resource/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Materialize -->
-        <link type="text/css" rel="stylesheet" href="../Resource/css/materialize.min.css"  media="screen,projection"/>
+        <!-- Materialize  -->
+        <link type="text/css" rel="stylesheet" href="../Resource/css/materialize.min.css"  media="screen,projection"/> 
         <script type="text/javascript" src="../Resource/js/materialize.min.js"></script>
+       
+        
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- Font Awesome -->
@@ -23,9 +25,18 @@
         <link href="../Resource/css/nprogress.css" rel="stylesheet">
         <!-- Animate.css -->
         <link href="../Resource/css/animate.min.css" rel="stylesheet">
+       
 
         <!-- Custom Theme Style -->
         <link href="../Resource/build/css/custom.css" rel="stylesheet">
+        
+         <script src="../Resource/js/jquery-functions.js"></script>
+        <script src="../Resource/js/reservacion.js"></script> 
+        <script src="../Resource/js/cabanias.js"></script>
+        <script src="../Resource/js/actividades.js"></script>
+        <script src="../Resource/js/paquetes.js"></script>
+                <script src="../Resource/js/bootstrap.min.js"></script>
+
     </head>
 
     <body class="login">
@@ -126,18 +137,29 @@
                                         <div id="cabanias"> 
 
                                         </div>
+                       
+                                        
                                        <div class="col-md-6 col-md-offset-6">
                                             <div class="">
                                             <button id="btnsiguiente"  class="btn btn-success"  type="button"   >Siguiente</button>                
                                         </div> 
                                             
                                         </div>
+                                        
+                                      <p><buton type='button ' class='btn btn-info btn-sm' data-toggle='modal' data-target='#Detalles' onclick='' >Detalles</button></p>
+                                      
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                
+                    
+                    
+                    
+                    
 
                 </div>
 
@@ -197,6 +219,42 @@
             </div>
                 </div>
 
+                                            <!-- Modal detalle-->
+                    <div class="modal fade" id="Detalles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">Detalles</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-group" id="editarCabania"  >
+                                    <input class="form-control" type="hidden" id="cabania" name="cabania"/>
+
+                                    <label class="control-label">Nombre de  cabaña</label>
+                                  
+                                    <input class="form-control" id="nombrec" name="nombrec"/>
+                                     <label class="control-label">Descripcion</label>
+                                    <input class="form-control" id="descripcion" name="descripcion"/>
+                                     <label class="control-label">Tarifa $</label>
+                                    <input class="form-control" id="tarifa" name="tarifa"/>
+                                   
+                                     </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button  id="btneditar" type="button"  class="btn btn-primary">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                                        
+                    
+        
+            
             
             
 <!--              <div id="siguiente2">
@@ -261,11 +319,7 @@
 
         </form>
 
-        <script src="../Resource/js/jquery-functions.js"></script>
-        <script src="../Resource/js/reservacion.js"></script> 
        
-        <script src="../Resource/js/cabanias.js"></script>
-        <script src="../Resource/js/actividades.js"></script>
-        <script src="../Resource/js/paquetes.js"></script>
+        
     </body>
 </html>

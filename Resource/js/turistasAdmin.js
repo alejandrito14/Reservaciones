@@ -121,17 +121,17 @@ function editarT() {
         url: url + "/cabanias/" + idcabania,
         dataType: "JSON",
         data: JSON.stringify(datosform),
-        succes: function (vresponse) {
+       }).done(function(vresponse){
             
-            if(vresponse==1){
+            if(vresponse.messageNumber){
             cargarTabla();
             alert("Se edito correctamente");
-        }
-
-        },
-        error: function (verror) {
-
-        }
+            }
+//
+//        },
+//        error: function (verror) {
+//
+//        }
 
     });
 

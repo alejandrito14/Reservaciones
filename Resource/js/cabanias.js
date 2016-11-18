@@ -4,13 +4,20 @@ var url = '../Controller/cabaniaController.php';
 
 $(document).ready(function () {
 
-    $("#cabanias").html("");
+   cargarCabanias();
+});
+
+
+function cargarCabanias(){
+    
+     $("#cabanias").html("");
 
    $.getJSON(url + "/cabanias", function (vresponse) {
           
       
         
         $.each(vresponse.cabanias.cabanias, function (i, cabanias) {
+            var datos = cabanias.idcabania + "*" + cabanias.nombre + "*" + cabanias.descripcion + "*" + cabanias.tarifa;
 
             var cabanas = 
                     "<div class='col-md-4'>"+
@@ -21,15 +28,20 @@ $(document).ready(function () {
                     "<h4>Detalles</h4>"+
                     " <p> Nombre: " + cabanias.nombre + "</p>" +
                     " <p>Costo: $ " + cabanias.tarifa + "</p>" +
-                    " <p> Descripción: " + cabanias.descripcion + "</p>" +
-                    "<p>"+
-                     "<input name='cabanias' type='radio' value='"+ cabanias.idcabania+"' />"+
-                     " <label >"+cabanias.nombre+"</label>"+
+                  
+                   "</br>"+
+                   
+                   "<p>"+
+                    
+                     
                      "</p>"+
-
+                        "</br>"+
+                        
                     " </div>" +
                  
-
+                  " <p><buton type='button ' class='btn btn-info btn-sm' data-toggle='modal' data-target='#Detalles' onclick='mostrar(" + '"' + datos + '"' + ");' >Detalles</button></p>"+
+                   "<input name='cabanias' type='radio' value='"+ cabanias.idcabania+"' />"+
+                     " <label >"+cabanias.nombre+"</label>"+
 
                     "</div>   ";
 
@@ -39,4 +51,18 @@ $(document).ready(function () {
 
     });
 
-});
+    
+}
+
+
+
+
+function mostrar(datos) {
+
+    var d = datos.split("*");
+    $("#cabania").val(d[0]);
+    $("#nombrec").val(d[1]);
+    $("#descripcion").val(d[2]);
+    $("#tarifa").val(d[3]);
+
+}

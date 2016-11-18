@@ -45,6 +45,16 @@ $app->post("/cabanias", function ($vrequest) {
        $vflcabania->tarifa=$ventrada->txttarifa;
  
         $vstatus = clspBLCabania::insertar_cabania($vflcabania);
+        
+        
+        if($vstatus==1){
+          return 1;
+           
+        }
+        
+          $vdataResponse["messageNumber"]=$vstatus;
+        unset($vrequest,$vbody,$ventrada,$vflcabania,$vstatus);
+          
     } catch (Exception $exception) {
 
         $vdataResponse["messageNumber"] = -100;
@@ -62,6 +72,29 @@ $app->get("/cabanias", function () use ($app, $result) {
         $obj = new clspBLCabania();
         $coleccion = new clscFLCabania();
         $result = $obj->listar_cabania($coleccion);
+        if ($result == 1) {
+
+            $dataResponse["cabanias"] = $coleccion;
+        }
+    } catch (Exception $exception) {
+
+        $dataResponse["cabania"] = -100;
+    }
+
+    echo json_encode($dataResponse);
+});
+
+$app->get("/cabanias/{nombre}", function ($vresponse) use ($app, $result) {
+
+     $nombre = $vresponse->getAttribute('nombre');
+
+    $dataResponse = array();
+    try {
+        
+        
+        $obj = new clspBLCabania();
+        $coleccion = new clscFLCabania();
+        $result = $obj->listar_cabaniaporid($coleccion,$nombre);
         if ($result == 1) {
 
             $dataResponse["cabanias"] = $coleccion;
@@ -118,12 +151,11 @@ $app->put('/cabanias/{idcabania}', function ($vrequest) {
         
         $vstatus = clspBLCabania::editar_cabania($vflcabania);
         
-        if($vstatus==1){
-            
-            return 1;
-        }else{
-            return 0;
+        if($vstatus=1){
+           
+            $vdataResponse["messageNumber"]=$vstatus;
         }
+        
         
     } catch (Exception $exception) {
 

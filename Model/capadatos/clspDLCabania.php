@@ -38,12 +38,39 @@ class clspDLCabania {
 
         return 0;
     }
+    
+    public static function listarCabaniaporid($mysql, $coleccion,$nombre){
+        
+        $consulta = $mysql->consulta("SELECT * FROM c_cabania WHERE cmpnombre like '%".$nombre."%'");
+
+        if ($mysql->num_rows($consulta) > 0) {
+            while ($resultados = $mysql->fetch_array($consulta)) {
+                $cabania = new clspFLCabania();
+
+                $cabania->idcabania = $resultados['id_cabania'];
+                $cabania->nombre = $resultados['cmpnombre'];
+                $cabania->tarifa = $resultados['cmptarifa'];
+                $cabania->descripcion = $resultados['cmpdescripcion'];
+
+
+
+
+                $coleccion->cabanias [] = $cabania;
+                // echo json_encode($coleccion);
+            }
+            return 1;
+        }
+
+        return 0;  
+        
+        
+    }
 
     public static function eliminar_cabania($vmysql, $id) {
         try {
             $consulta = $vmysql->consulta("DELETE FROM c_cabania WHERE id_cabania=\"$id\" ");
 
-            if ($vmysql->consulta($consulta)) {
+            if ($consulta) {
 
                 if ($vmysql->ObtenerNumeroFilasAfectadas() != 1) {
                     return 0;
@@ -60,11 +87,10 @@ class clspDLCabania {
 
     public static function editarCabania($vmySql, $vflcabania) {
         try {
-            $vsql = "UPDATE c_cabania SET cmpnombre=\"$vflcabania->nombre\",cmpdescripcion=\"$vflcabania->descripcion\",cmptarifa=\"$vflcabania->tarifa\"  WHERE id_cabania=\"$vflcabania->idcabania\" ";
+           // $vsql = "UPDATE c_cabania SET cmpnombre=\"$vflcabania->nombre\",cmpdescripcion=\"$vflcabania->descripcion\",cmptarifa=\"$vflcabania->tarifa\"  WHERE id_cabania=\"$vflcabania->idcabania\" ";
+            $consulta = $vmySql->consulta("UPDATE c_cabania SET cmpnombre=\"$vflcabania->nombre\",cmpdescripcion=\"$vflcabania->descripcion\",cmptarifa=\"$vflcabania->tarifa\"  WHERE id_cabania=\"$vflcabania->idcabania\" ");
 
-
-
-            if ($vmySql->consulta($vsql)) {
+            if ($consulta) {
 
                 if ($vmySql->ObtenerNumeroFilasAfectadas() != 1) {
                     return 0;
@@ -84,9 +110,9 @@ class clspDLCabania {
 
         try {
 //It sets sql statement in order to add new cabaña
-            echo '<pre>';
-            var_dump($vflcabania);
-            echo '<pre>';
+//            echo '<pre>';
+//            var_dump($vflcabania);
+//            echo '<pre>';
             $vsql = "INSERT INTO c_cabania(cmpnombre,cmptarifa,cmpdescripcion) ";
             $vsql.="VALUES('" . $vflcabania->nombre . "'";
             $vsql.=", '" . $vflcabania->tarifa . "'";
@@ -101,7 +127,7 @@ class clspDLCabania {
 
 
             unset($vsql, $vmySql);
-            echo '1';
+           
             return 1;
         } catch (Exception $vexcepcion) { //It catches exception /It returns exception code catched
             throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());

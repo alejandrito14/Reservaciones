@@ -9,6 +9,10 @@
 
         <title>Tres LAgunas | admin </title>
 
+        <!-- jQuery -->
+        <script src="../Resource/js/jquery.min.js"></script>
+       <script src="../Resource/js/actividadesAdmin.js"></script>
+
         <!-- Bootstrap -->
         <link href="../Resource/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
@@ -17,12 +21,15 @@
         <link href="../Resource/css/nprogress.css" rel="stylesheet">
         <!-- iCheck -->
         <link href="../Resource/css/green.css" rel="stylesheet">
+        
         <!-- bootstrap-progressbar -->
         <link href="../Resource/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
         <!-- JQVMap -->
         <script type="text/javascript" src="../Resource/js/jquery-1.3.2.min.js" ></script> 
         <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
+                <script src="../Resource/js/jquery-functions.js"></script>
+
         <!-- Custom Theme Style -->
         <link href="../Resource/build/css/custom.min.css" rel="stylesheet">
     </head>
@@ -241,7 +248,7 @@
                                                 </div>
 
                                                 <div class="col-xs-1">
-                                                    <button class="btn  btn-primary " id="btningresar" type="button"  data-toggle='modal' data-target='#ingresarusuario' >Nuevo</button>
+                                                    <button class="btn  btn-primary " id="btningresar" type="button"  data-toggle='modal' data-target='#insertarA' >Nuevo</button>
 
                                                 </div>
                                             </div>
@@ -303,8 +310,84 @@
                         </div>
 
                     </div>
+                    
+                    
+                    <!-- Modal insertar-->
+                        <div class="modal fade" id="insertarA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel2">Ingresar Actividad</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-group" id="formactividad" name="formactividad" >
 
+                                    <label class="control-label ">Nombre de Actividad</label>
+                                    <input class="form-control" id="txtnombre" type="text" name="txtnombre"/>
+                                     
+                                     <label class="control-label">Tarifa $</label>
+                                    <input class="form-control" id="txttarifa" type="text" name="txttarifa"/>
+                                    
+                                    <label class="control-label">Detalle</label>
+                                    <input class="form-control" id="txtdetalle" type="text" name="txtdetalle"/>
+                                    
+                                    
+                                       <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                     <button id="btnguardar" class="btn btn-success" type="button"  >Guardar</button>                
+                                     </div>
+                                    
+                                    
+                                     </form>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
 
+                    
+                    <!--Modal ediatr-->
+                    
+                               <div class="modal fade" id="EditarA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel2">Editar Actividad</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-group" id="formEditar" name="formEditar" >
+                                        <input class="form-control" id="actividad" type="hidden" name="actividad"/>
+     
+                                    <label class="control-label ">Nombre de Actividad</label>
+                                    <input class="form-control" id="nombre" type="text" name="nombre"/>
+                                     
+                                     <label class="control-label">Tarifa $</label>
+                                    <input class="form-control" id="tarifa" type="text" name="tarifa"/>
+                                    
+                                    <label class="control-label">Detalle</label>
+                                    <input class="form-control" id="detalle" type="text" name="detalle"/>
+                                    
+                                    
+                                       <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                     <button id="btnguardar" class="btn btn-primary" type="button"  >Guardar cambios</button>                
+                                     </div>
+                                    
+                                    
+                                     </form>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
 
                 </div>
 
@@ -339,9 +422,7 @@
                 <!-- /footer content -->
             </div>
         </div>
-        <script src="../Resource/js/actividadesAdmin.js"></script>
-        <!-- jQuery -->
-        <script src="../Resource/js/jquery.min.js"></script>
+       
         <!-- Bootstrap -->
         <script src="../Resource/js/bootstrap.min.js"></script>
         <!-- FastClick -->

@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Tres LAgunas | admin </title>
+        <title>Tres LAgunas | Turista </title>
 
         <!-- Bootstrap -->
         <link href="../Resource/css/bootstrap.min.css" rel="stylesheet">
@@ -58,16 +58,16 @@
                                 <ul class="nav side-menu">
                                     <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="">Visitanos</a></li>
+                                            <li><a href="turistapanel.php">Visitanos</a></li>
 
                                         </ul>
                                     </li>
 
                                     <li><a><i class="fa fa-edit"></i> Servicios <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                            <li><a href="">Cabañas</a></li>
-                                            <li><a href="">Paquetes</a></li>
-                                            <li><a href="">Actividades</a></li>
+                                            <li><a href="cabanias.php">Cabañas</a></li>
+                                            <li><a href="Paquetes.php">Paquetes</a></li>
+                                            <li><a href="Actividades.php">Actividades</a></li>
                                         </ul>
                                     </li>
 

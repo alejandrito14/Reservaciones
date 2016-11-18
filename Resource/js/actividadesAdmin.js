@@ -5,6 +5,9 @@ var url = '../Controller/actividadController.php';
 $(document).ready(function () {
 
     cargarTabla();
+     //$("#btneditar").attr("onclick", "editarC()");
+
+    $("#btnguardar").attr("onclick", "guardarA()");
 
 });
 
@@ -23,7 +26,6 @@ function cargarTabla() {
             // console.log(cabanias);
             
        var datos =actividades.idActividad + "*" + actividades.nombreActividad + "*" + actividades.tarifa+ "*" + actividades.detalle;
-
             var actividades = "<tr>"
 
                     + "<td>" + actividades.idActividad + "</td>"
@@ -40,6 +42,47 @@ function cargarTabla() {
     });
 
 }
+
+
+function mostrar(datos) {
+
+    var d = datos.split("*");
+    $("#actividad").val(d[0]);
+    $("#nombre").val(d[1]);
+    $("#tarifa").val(d[2]);
+    $("#detalle").val(d[3]);
+
+}
+
+function guardarA(){
+    
+     var datosformulario = $("#formactividad").serializeObject();
+    
+   
+    $.ajax({
+        type: 'POST',
+        url: url + "/actividades",
+        dataType: "JSON",
+        data: JSON.stringify(datosformulario),
+        succes: function (vresponse) {
+            
+                          
+            alert("Se agrego un registro");    
+            cargarTabla();
+        
+            
+        },
+        error: function (verror) {
+
+        }
+
+    });
+    
+    
+}
+
+
+
 
 function eliminar(id) {
 
