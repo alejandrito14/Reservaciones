@@ -112,7 +112,7 @@
 							<li><a href="">Servicios<span class="subheader">Selecciona un servicio</span></a>
 								<ul>
 									
-									<li><a href="Cabañas_panel.php"><span>Cabañas</span></a></li>
+									<li><a href="Cabanas_panel.php"><span>Cabañas</span></a></li>
 									<li><a href="Paquetes_panel.php"><span>Paquetes</span></a></li>
 									<li><a href=""><span> Actividades</span></a></li>
 									
