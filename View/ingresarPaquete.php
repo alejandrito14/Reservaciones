@@ -11,7 +11,8 @@
 
         <!-- Bootstrap -->
         <link href="../Resource/css/bootstrap.min.css" rel="stylesheet">
-
+        <script src="../Resource/js/jquery.min.js"></script>
+        <script src="../Resource/js/paquetesAdmin.js"></script>
         <!-- Font Awesome -->
         <link href="../Resource/css/font-awesome.min.css" rel="stylesheet">
         <!-- NProgress -->
@@ -25,6 +26,7 @@
         <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
         <script src="../Resource/js/selectActividades.js "></script>
+        <script src="../Resource/js/jquery-functions.js"></script>
 
         <!-- Custom Theme Style -->
         <link href="../Resource/build/css/custom.min.css" rel="stylesheet">
@@ -236,13 +238,13 @@
                                     </div>
                                     <div class="x_content">
                                         <br />
-                                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                                        <form id="ingresarP" class="form-horizontal form-label-left">
 
                                             <div class="form-group">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="txtnombre" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="txtnombre" name="txtnombre" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
 
@@ -258,7 +260,7 @@
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Detalle <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="txttarifa" name="txttarifa" required="required" class="form-control col-md-7 col-xs-12">
+                                                    <input type="text" id="txtdetalle" name="txtdetalle" required="required" class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
 
@@ -266,36 +268,39 @@
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Actividades <span class="required">*</span>
                                                 </label>
                                                 <div class="row">
-                                                      
-                                                <div class="col-md-5 col-sm-5 col-xs-12">
-                                                     <div id="select">
-                                                        <select class='form-control' id="actividades" name="actividad[]" >
-                                                           
-                                                    </select>
-                                                         </br>
+
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <div id="select">
+                                                            <select class='form-control' id="actividades" name="actividad[]" >
+
+                                                            </select>
+                                                            </br>
                                                         </div>
-                                                      </div>
+                                                    </div>
                                                     <div class="col-md-3">
                                                         <button type="button" id="agregaactividades" class="btn btn-default btn-sm  ">
-                                                        <span class="glyphicon glyphicon-plus"></span> 
-                                                    </button>
+                                                            <span class="glyphicon glyphicon-plus"></span> 
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
+
+
+                                            <div class="ln_solid"></div>
+                                            <div class="form-group">
+                                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                                    <a href="paquetesAdmin.php" class="btn btn-primary" role="button">Cancelar</a>
+                                                    <button id="btnguardar" class="btn btn-success" type="button"  >Guardar</button>                
+                                                </div>
+                                            </div>
+
+                                        </form>
                                     </div>
 
 
 
 
-                                    <div class="ln_solid"></div>
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                            <button type="submit" class="btn btn-primary">Cancel</button>
-                                            <button type="submit" class="btn btn-success">Submit</button>
-                                        </div>
-                                    </div>
 
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -346,8 +351,6 @@
             <!-- /footer content -->
         </div>
     </div>
-    <!-- jQuery -->
-    <script src="../Resource/js/jquery.min.js"></script>
 
 
     <!-- Bootstrap -->

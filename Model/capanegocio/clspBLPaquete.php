@@ -58,6 +58,38 @@ class clspBLPaquete {
         
     }
     
+      public static function insertar_paquete($vflpaquete) {
+
+        $vmySql = new Mysql();
+        $vmySql->AbrirConexion();
+        $vmySql->start_transaction();
+
+        if ($result = clspDLUsuario::agregarUsuarios($vmySql, $vflturistas) == 1) {
+
+            $turistas = clspDLTurista::agregarTurista($vmySql, $vflturistas);
+
+            if ($turistas == 1) {
+
+                $vmySql->commit();
+                echo 'se hizo commit';
+            } else {
+
+                $vmySql->rollback();
+
+                echo 'se hizo roollback';
+                return -1;
+            }
+        } 
+        else {
+
+            return 0;
+        }
+        $vmySql->CerrarConexion();
+
+        return 1;
+    }
+
+    
     
     
     

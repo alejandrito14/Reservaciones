@@ -70,7 +70,34 @@ class clspDLPaquete {
         }
         
     }
+    
+   public static function insertarPaquete($vmySql, $vflpaquete) {
 
+        try {
+//It sets sql statement in order to add new cabaña
+//            echo '<pre>';
+//            var_dump($vflcabania);
+//            echo '<pre>';
+            $vsql = "INSERT INTO c_paquete(cmpnombre,cmptarifa,cmpdescripcion) ";
+            $vsql.="VALUES('" . $vflcabania->nombre . "'";
+            $vsql.=", '" . $vflcabania->tarifa . "'";
+            $vsql.=", '" . $vflcabania->descripcion . "')";
+
+            if ($vmySql->consulta($vsql)) {
+
+                if ($vmySql->ObtenerNumeroFilasAfectadas() != 1) {
+                    return 0;
+                }
+            }
+
+
+            unset($vsql, $vmySql);
+           
+            return 1;
+        } catch (Exception $vexcepcion) { //It catches exception /It returns exception code catched
+            throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
+        }
+    }
     
     
 

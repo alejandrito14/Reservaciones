@@ -36,7 +36,7 @@ $app->post("/cabanias", function ($vrequest) {
         $ventrada = json_decode($vbody);
 
 
-        var_dump(json_encode($ventrada));
+       // var_dump(json_encode($ventrada));
 
         $vflcabania=new clspFLCabania();
 
@@ -48,11 +48,11 @@ $app->post("/cabanias", function ($vrequest) {
         
         
         if($vstatus==1){
-          return 1;
+           $vdataResponse["messageNumber"]=$vstatus;
            
         }
         
-          $vdataResponse["messageNumber"]=$vstatus;
+        
         unset($vrequest,$vbody,$ventrada,$vflcabania,$vstatus);
           
     } catch (Exception $exception) {
@@ -67,21 +67,21 @@ $app->post("/cabanias", function ($vrequest) {
 $app->get("/cabanias", function () use ($app, $result) {
 
 
-    $dataResponse = array();
+    $vdataResponse = array();
     try {
         $obj = new clspBLCabania();
         $coleccion = new clscFLCabania();
         $result = $obj->listar_cabania($coleccion);
         if ($result == 1) {
 
-            $dataResponse["cabanias"] = $coleccion;
+            $vdataResponse["cabanias"] = $coleccion;
         }
     } catch (Exception $exception) {
 
-        $dataResponse["cabania"] = -100;
+        $vdataResponse["cabania"] = -100;
     }
 
-    echo json_encode($dataResponse);
+    echo json_encode($vdataResponse);
 });
 
 $app->get("/cabanias/{nombre}", function ($vresponse) use ($app, $result) {
@@ -113,19 +113,21 @@ $app->delete("/cabanias/{idcabania}", function ($vresponse) {
     $id = $vresponse->getAttribute('idcabania');
 
 
-    $dataResponse = array();
+    $vdataResponse = array();
     try {
         $obj = new clspBLCabania();
-        $result = $obj->eliminar_cabania($id);
-        if ($result = 1) {
+        $vstatus = $obj->eliminar_cabania($id);
+        
+        
+        if ($vstatus = 1) {
 
-            echo 'hola';
+              $vdataResponse["messageNumber"] =$vstatus;
         }
     } catch (Exception $exception) {
-        $dataResponse["cabania"] = -100;
+        $vdataResponse["cabania"] = -100;
     }
 
-    echo json_encode($dataResponse);
+    echo json_encode($vdataResponse);
 });
 
 

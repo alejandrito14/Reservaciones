@@ -71,7 +71,7 @@ class clspBLCabania {
         $vmySql->AbrirConexion();
 
         if ($result = clspDLCabania::insertarCabania($vmySql, $vflcabania) == 1) {
-            echo '1';
+          
             return 1;
         } else {
             return 0;

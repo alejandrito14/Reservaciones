@@ -3,12 +3,12 @@
 var url = '../Controller/cabaniaController.php';
 
 $(document).ready(function () {
-   // buscarlistar('');
-   cargarTabla();
- $("#btneditar").attr("onclick", "editarC()");
+    // buscarlistar('');
+    cargarTabla();
+    $("#btneditar").attr("onclick", "editarC()");
 
     $("#btnguardar").attr("onclick", "guardarc()");
-   
+
 });
 
 
@@ -34,13 +34,13 @@ function cargarTabla() {
     });
 }
 
-function buscarlistar(nombre){
-    
-     var nombre = $("#buscar").val();
-    
-     $("#tablaCabanias tbody").html("");
+function buscarlistar(nombre) {
 
-    $.getJSON(url + "/cabanias"+ nombre, function (vresponse) {
+    var nombre = $("#buscar").val();
+
+    $("#tablaCabanias tbody").html("");
+
+    $.getJSON(url + "/cabanias" + nombre, function (vresponse) {
         // console.log(cabanias);
         // alert(vresponse.cabanias.cabanias.length);
         $.each(vresponse.cabanias.cabanias, function (i, cabanias) {
@@ -56,9 +56,9 @@ function buscarlistar(nombre){
             $(cabanas).appendTo("#tablaCabanias tbody");
         });
     });
-    
-    
-    
+
+
+
 //        $.ajax({
 //            type: 'GET',
 //            url: url + "/cabanias/" + idcabania,
@@ -72,8 +72,8 @@ function buscarlistar(nombre){
 //            }
 //
 //        });
-       
-    
+
+
 }
 
 
@@ -87,26 +87,38 @@ function mostrar(datos) {
 
 }
 
+function borrarform() {
+
+
+    $("#txtnombre").val("");
+    $("#txtdescripcion").val("");
+    $("#txttarifa").val("");
+
+}
+
 function guardarc() {
 
-  var datosformulario = $("#formcabania").serializeObject();
-    
-   
+    var datosformulario = $("#formcabania").serializeObject();
+
+
     $.ajax({
         type: 'POST',
         url: url + "/cabanias",
         dataType: "JSON",
         data: JSON.stringify(datosformulario),
-        succes: function (vresponse) {
-            
-                          
-            alert("Se agrego un registro");    
-            cargarTabla();
-        
-            
+        success: function (vresponse) {
+
+            if (vresponse.messageNumber == '1') {
+                alert(' Se agrego correctamente');
+                borrarform();
+                cargarTabla();
+
+
+            }
         },
         error: function (verror) {
-
+            alert(' Error al agregar');
+            cargarTabla();
         }
 
     });
@@ -121,12 +133,12 @@ function eliminar(id) {
             type: 'DELETE',
             url: url + "/cabanias/" + id,
             success: function (vresponse) {
-                alert(' deleted successfully');
+                alert(' Registro Eliminado');
 
                 cargarTabla();
             },
             error: function (verror) {
-                alert('delete error');
+                alert('Error al eliminar');
             }
 
         });
@@ -150,16 +162,17 @@ function editarC() {
         url: url + "/cabanias/" + idcabania,
         dataType: "JSON",
         data: JSON.stringify(datosform),
-        succes: function (vresponse) {
-          
-             
-            
-            alert("Se edito correctamente");
-            cargarTabla();
-             
+        success: function (vresponse) {
+
+            if (vresponse.messageNumber == '1') {
+
+                alert("Se edito correctamente");
+                cargarTabla();
+            }
+
         },
         error: function (verror) {
-                        alert("error");
+            alert("Error al editar");
 
 
         }

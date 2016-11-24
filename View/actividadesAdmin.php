@@ -377,7 +377,7 @@
                                     
                                        <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                     <button id="btnguardar" class="btn btn-primary" type="button"  >Guardar cambios</button>                
+                                     <button id="btnEditar" class="btn btn-success" type="button"  >Guardar cambios</button>                
                                      </div>
                                     
                                     

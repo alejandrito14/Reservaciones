@@ -51,7 +51,7 @@ $app->post("/actividades", function ($vrequest) {
         $ventrada = json_decode($vbody);
 
 
-        var_dump(json_encode($ventrada));
+        // var_dump(json_encode($ventrada));
 
         $vflactividad = new clspFLActividad();
 
@@ -61,6 +61,11 @@ $app->post("/actividades", function ($vrequest) {
 
 
         $vstatus = clspBLActividad::insertar_actividad($vflactividad);
+
+        if ($vstatus = 1) {
+
+            $vdataResponse["messageNumber"] = $vstatus;
+        }
     } catch (Exception $exception) {
 
         $vdataResponse["messageNumber"] = -100;
@@ -75,21 +80,57 @@ $app->delete("/actividades/{idactividad}", function ($vresponse) {
     $id = $vresponse->getAttribute('idactividad');
 
 
-    $dataResponse = array();
+    $vdataResponse = array();
     try {
         $obj = new clspBLActividad;
-        $result = $obj->eliminar_actividad($id);
-        if ($result = 1) {
+        $vstatus = $obj->eliminar_actividad($id);
+        if ($vstatus = 1) {
 
-            echo 'hola';
+            $vdataResponse["messageNumber"] = $vstatus;
         }
     } catch (Exception $exception) {
-        $dataResponse["actividad"] = -100;
+        $vdataResponse["actividad"] = -100;
     }
 
-    echo json_encode($dataResponse);
+    echo json_encode($vdataResponse);
 });
 
+
+
+$app->put('/actividades/{idactividad}', function ($vrequest) {
+
+    $vdataResponse = array();
+
+    try {
+
+        $vbody = $vrequest->getBody();
+        $ventrada = json_decode($vbody);
+
+
+        //var_dump($ventrada);
+        $vflactividad = new clspFLActividad();
+
+        $vflactividad->idActividad = $ventrada->actividad;
+        $vflactividad->nombreActividad = $ventrada->nombre;
+        $vflactividad->tarifa = $ventrada->tarifa;
+        $vflactividad->detalle = $ventrada->detalle;
+
+//        var_dump($vflactividad);
+        $vstatus = clspBLActividad::editar_actividad($vflactividad);
+
+        if ($vstatus = 1) {
+
+            $vdataResponse["messageNumber"] = $vstatus;
+            
+            
+        }
+    } catch (Exception $exception) {
+
+        $vdataResponse["messageNumber"] = -100;
+    }
+
+    echo json_encode($vdataResponse);
+});
 
 
 

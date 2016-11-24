@@ -43,7 +43,7 @@ class clspBLActividad {
         $vmySql->AbrirConexion();
 
         if ($result = clspDLActividad::insertarActividad($vmySql, $vflactividad) == 1) {
-            echo '1';
+           
             return 1;
         } else {
             return 0;
@@ -64,6 +64,21 @@ class clspBLActividad {
         
         
     }
+    
+    public static function editar_actividad($vflactividad) {
+        $vmySql = new Mysql();
+        $vmySql->AbrirConexion();
+//echo 'bien2';
+// var_dump($vflactividad);
+        $result = clspDLActividad::editarActividad($vmySql, $vflactividad);
+          
+            return $result;
+        
+        $vmySql->CerrarConexion();
+    }
+
+    
+    
 
     
     

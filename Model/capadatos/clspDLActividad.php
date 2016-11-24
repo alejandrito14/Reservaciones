@@ -60,14 +60,13 @@ class clspDLActividad {
             throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
         }
     }
-    
-    
-     public static function insertarActividad($vmySql, $vflactividad) {
+
+    public static function insertarActividad($vmySql, $vflactividad) {
 
 
         try {
 //It sets sql statement in order to add new activity
-            
+
             $vsql = "INSERT INTO c_actividad(cmpnombreActividad,cmptarifa,cmpdetalle) ";
             $vsql.="VALUES('" . $vflactividad->nombreActividad . "'";
             $vsql.=", '" . $vflactividad->tarifa . "'";
@@ -82,14 +81,34 @@ class clspDLActividad {
 
 
             unset($vsql, $vmySql);
-            echo '1';
+
             return 1;
         } catch (Exception $vexcepcion) { //It catches exception /It returns exception code catched
             throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
         }
     }
-    
-    
-    
+
+    public static function editarActividad($vmySql, $vflactividad) {
+        try {
+//            
+            // $vsql = "UPDATE c_cabania SET cmpnombre=\"$vflcabania->nombre\",cmpdescripcion=\"$vflcabania->descripcion\",cmptarifa=\"$vflcabania->tarifa\"  WHERE id_cabania=\"$vflcabania->idcabania\" ";
+            $consulta = $vmySql->consulta("UPDATE c_actividad SET cmpnombreActividad=\"$vflactividad->nombreActividad\",cmptarifa=\"$vflactividad->tarifa\",cmpdetalle=\"$vflactividad->detalle\"  WHERE id_actividad=\"$vflactividad->idActividad\" ");
+
+            if ($consulta) {
+
+                if ($vmySql->ObtenerNumeroFilasAfectadas() != 1) {
+                    return 0;
+                }
+            }
+
+
+
+            unset($consulta, $vmySql);
+            return 1;
+        } catch (Exception $vexcepcion) {
+
+            throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
+        }
+    }
 
 }

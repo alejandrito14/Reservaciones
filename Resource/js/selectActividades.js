@@ -15,7 +15,7 @@ $(document).ready(function () {
 
         if (x < max_fields) {
             x++;
-            $(wrapper).clone().insertAfter(wrapper).append(' <a class="btn btn-info remove_field  " role="button"> - </a> ');
+            $(wrapper).clone().insertAfter(wrapper).append(' <a class="btn btn-info  remove_field  " role="button"> - </a> ');
 
         }
 

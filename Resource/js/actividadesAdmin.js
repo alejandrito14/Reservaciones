@@ -5,9 +5,12 @@ var url = '../Controller/actividadController.php';
 $(document).ready(function () {
 
     cargarTabla();
-     //$("#btneditar").attr("onclick", "editarC()");
+    //$("#btneditar").attr("onclick", "editarC()");
 
     $("#btnguardar").attr("onclick", "guardarA()");
+    $("#btnEditar").attr("onclick", "editarA()");
+
+
 
 });
 
@@ -24,8 +27,8 @@ function cargarTabla() {
 
         $.each(vresponse.actividades.actividades, function (i, actividades) {
             // console.log(cabanias);
-            
-       var datos =actividades.idActividad + "*" + actividades.nombreActividad + "*" + actividades.tarifa+ "*" + actividades.detalle;
+
+            var datos = actividades.idActividad + "*" + actividades.nombreActividad + "*" + actividades.tarifa + "*" + actividades.detalle;
             var actividades = "<tr>"
 
                     + "<td>" + actividades.idActividad + "</td>"
@@ -43,6 +46,14 @@ function cargarTabla() {
 
 }
 
+function  borrarform() {
+
+
+    $("#txtnombre").val("");
+    $("#txttarifa").val("");
+    $("#txtdetalle").val("");
+
+}
 
 function mostrar(datos) {
 
@@ -54,31 +65,68 @@ function mostrar(datos) {
 
 }
 
-function guardarA(){
-    
-     var datosformulario = $("#formactividad").serializeObject();
-    
-   
+function guardarA() {
+
+    var datosformulario = $("#formactividad").serializeObject();
+
+
     $.ajax({
         type: 'POST',
         url: url + "/actividades",
         dataType: "JSON",
         data: JSON.stringify(datosformulario),
-        succes: function (vresponse) {
-            
-                          
-            alert("Se agrego un registro");    
-            cargarTabla();
-        
-            
+        success: function (vresponse) {
+
+            if (vresponse.messageNumber == '1') {
+                alert(' Se agrego correctamente');
+                borrarform();
+                cargarTabla();
+
+
+            }
+
         },
         error: function (verror) {
+            alert("Error al agregar");
 
         }
 
     });
-    
-    
+
+
+}
+
+function editarA() {
+
+    var idactividad = $("#actividad").val();
+
+    var datosform = $("#formEditar").serializeObject();
+
+
+    $.ajax({
+        type: 'PUT',
+        url: url + "/actividades/" + idactividad,
+        dataType: "JSON",
+        data: JSON.stringify(datosform),
+        success: function (vresponse) {
+
+            if (vresponse.messageNumber == '1') {
+
+                alert("Se edito correctamente");
+                cargarTabla();
+            }
+
+        },
+        error: function (verror) {
+            alert("Error al editar");
+
+
+        }
+
+    });
+
+
+
 }
 
 
@@ -92,12 +140,12 @@ function eliminar(id) {
             type: 'DELETE',
             url: url + "/actividades/" + id,
             success: function (vresponse) {
-                alert(' deleted successfully');
+                alert(' Se elimino correctamente');
 
                 cargarTabla();
             },
             error: function (verror) {
-                alert('delete error');
+                alert('Error al eliminar');
             }
 
         });

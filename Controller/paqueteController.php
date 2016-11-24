@@ -69,6 +69,49 @@ $app->delete("/paquetes/{idpaquete}", function ($vresponse) {
 });
 
 
+$app->post("/paquetes", function ($vrequest) {
+
+    $vdataResponse = array();
+
+    try {
+      
+        $vbody = $vrequest->getBody();
+        $ventrada = json_decode($vbody);
+
+
+        var_dump(json_encode($ventrada));
+        
+            $vflpaquete=new clspFLPaquete();
+            
+            
+           
+
+//        $vflcabania=new clspFLCabania();
+//
+//       $vflcabania->nombre=$ventrada->txtnombre;
+//       $vflcabania->descripcion=$ventrada->txtdescripcion;
+//       $vflcabania->tarifa=$ventrada->txttarifa;
+// 
+//        $vstatus = clspBLCabania::insertar_cabania($vflcabania);
+//        
+//        
+//        if($vstatus==1){
+//           $vdataResponse["messageNumber"]=$vstatus;
+//           
+//        }
+//        
+//        
+//        unset($vrequest,$vbody,$ventrada,$vflcabania,$vstatus);
+          
+    } catch (Exception $exception) {
+
+        $vdataResponse["messageNumber"] = -100;
+    }
+
+    echo json_encode($vdataResponse);
+});
+
+
 
 
     

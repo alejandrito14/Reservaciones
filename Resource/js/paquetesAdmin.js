@@ -5,6 +5,7 @@ var url2 = '../Controller/paqueteController.php';
 $(document).ready(function () {
 cargarTabla();
    
+    $("#btnguardar").attr("onclick", "guardarP()");
 
 });
 
@@ -76,14 +77,9 @@ function ecitar(id){
 		type:'GET',
 		url:url2 + "/paquetes/"+ id,
 		
-		 success: function(vresponse){
+	success: function(vresponse){
                      
-                     
-                     
-         
-            
-           
-        },
+         },
         error: function(verror){
             alert('delete error');
         }
@@ -92,3 +88,33 @@ function ecitar(id){
     
     
 }
+
+function guardarP() {
+
+    var datosformulario = $("#ingresarP").serializeObject();
+
+
+
+    $.ajax({
+        type: 'POST',
+        url: url + "/paquetes",
+        dataType: "JSON",
+        data: JSON.stringify(datosformulario),
+        success: function (vresponse) {
+
+            if (vresponse.messageNumber == '1') {
+                alert(' Se agrego correctamente');
+               
+
+
+            }
+        },
+        error: function (verror) {
+            alert(' Error al agregar');
+            cargarTabla();
+        }
+
+    });
+
+}
+
