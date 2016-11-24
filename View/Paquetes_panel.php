@@ -112,7 +112,11 @@
 							<li><a href="">Servicios<span class="subheader">Selecciona un servicio</span></a>
 								<ul>
 									
+<<<<<<< HEAD
 									<li><a href="Cabañas_panel.php"><span>Cabañas</span></a></li>
+=======
+                                                                        <li><a href="Cabanas_panel.php"><span>Cabañas</span></a></li>
+>>>>>>> origin/master
 									<li><a href=""><span>Paquetes</span></a></li>
 									<li><a href="Actividades_panel.php"><span> Actividades</span></a></li>
 									

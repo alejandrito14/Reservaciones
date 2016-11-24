@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Tres lagunas | Actividades</title>
+		<title>Tres lagunas | Cabañas</title>
 		
 		<!-- CSS -->
 		<link rel="stylesheet" href="../Resource/css/style_1.css" type="text/css" media="screen" />
@@ -112,13 +112,9 @@
 							<li><a href="">Servicios<span class="subheader">Selecciona un servicio</span></a>
 								<ul>
 									
-<<<<<<< HEAD
-									<li><a href="Cabañas_panel.php"><span>Cabañas</span></a></li>
-=======
-									<li><a href="Cabanas_panel.php"><span>Cabañas</span></a></li>
->>>>>>> origin/master
+									<li><a href=""><span>Cabañas</span></a></li>
 									<li><a href="Paquetes_panel.php"><span>Paquetes</span></a></li>
-									<li><a href=""><span> Actividades</span></a></li>
+									<li><a href="Actividades_panel.php"><span> Actividades</span></a></li>
 									
 								</ul>
 							</li>
