@@ -131,6 +131,14 @@ body {
 	background: green ;
 }
 
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	/*max-width:1000px;*/
+	
+	width:100%;
+}
 /* NAVIGATION --------------------------------------------------------*/
 
 

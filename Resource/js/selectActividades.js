@@ -43,6 +43,7 @@ function  cargarselect() {
         $.each(vresponse.actividades.actividades, function (i, actividades) {
             // console.log(cabanias);
              
+             
             var actividades = "<option value=" + actividades.idActividad + ">" + actividades.nombreActividad + " </option>";
             $(actividades).appendTo("#actividades");
             

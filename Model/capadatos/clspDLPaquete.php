@@ -71,20 +71,24 @@ class clspDLPaquete {
         
     }
     
-   public static function insertarPaquete($vmySql, $vflpaquete) {
+   public static function insertarPaquete($vmySql, $vflAsignarPaqueteActividad) {
 
         try {
 //It sets sql statement in order to add new cabaña
 //            echo '<pre>';
 //            var_dump($vflcabania);
 //            echo '<pre>';
-            $vsql = "INSERT INTO c_paquete(cmpnombre,cmptarifa,cmpdescripcion) ";
-            $vsql.="VALUES('" . $vflcabania->nombre . "'";
-            $vsql.=", '" . $vflcabania->tarifa . "'";
-            $vsql.=", '" . $vflcabania->descripcion . "')";
-
+            $vsql = "INSERT INTO c_paquete(cmpnombrePaquete,cmptarifa,cmpdetalle) ";
+            $vsql.="VALUES('" . $vflAsignarPaqueteActividad->nombrePaquete . "'";
+            $vsql.=", '" . $vflAsignarPaqueteActividad->tarifaPaquete . "'";
+            $vsql.=", '" . $vflAsignarPaqueteActividad->detallePaquete . "')";
+            
             if ($vmySql->consulta($vsql)) {
-
+                
+                 $id_ultimo_paquete = mysql_insert_id();
+                 
+                 $vflAsignarPaqueteActividad->id_paquete=$id_ultimo_paquete;
+               
                 if ($vmySql->ObtenerNumeroFilasAfectadas() != 1) {
                     return 0;
                 }

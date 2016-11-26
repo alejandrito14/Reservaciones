@@ -11,6 +11,9 @@
 require_once ('../slim-3.3.0/autoload.php');
 require_once (dirname(dirname(__FILE__)) . '/Model/capafisica/clscFLPaquete.php');
 
+require_once (dirname(dirname(__FILE__)) . '/Model/capafisica/clscFLPaquete.php');
+
+
 //require_once (dirname(dirname(__FILE__)) . '/Model/capafisica/clspFLTurista.php');
 
 require_once (dirname(dirname(__FILE__)) . '/Model/capanegocio/clspBLPaquete.php');
@@ -69,40 +72,32 @@ $app->delete("/paquetes/{idpaquete}", function ($vresponse) {
 });
 
 
-$app->post("/paquetes", function ($vrequest) {
+$app->post("/paqueteActividad", function ($vrequest) {
 
     $vdataResponse = array();
 
     try {
-      
+
         $vbody = $vrequest->getBody();
         $ventrada = json_decode($vbody);
 
+        $vflAsignarPaqueteActividad = new clspFLAsignarPaqueteActividad();
+        $vflAsignarPaqueteActividad->nombrePaquete = $ventrada->txtnombre;
+        $vflAsignarPaqueteActividad->detallePaquete = $ventrada->txtdetalle;
+        $vflAsignarPaqueteActividad->tarifaPaquete = $ventrada->txttarifa;
+        $vflAsignarPaqueteActividad->id_actividad = $ventrada->actividad;
+  //var_dump($vflAsignarPaqueteActividad);
+          $vstatus=  clspBLPaquete::insertar_paquete($vflAsignarPaqueteActividad);
 
-        var_dump(json_encode($ventrada));
         
-            $vflpaquete=new clspFLPaquete();
-            
-            
-           
+      
 
-//        $vflcabania=new clspFLCabania();
-//
-//       $vflcabania->nombre=$ventrada->txtnombre;
-//       $vflcabania->descripcion=$ventrada->txtdescripcion;
-//       $vflcabania->tarifa=$ventrada->txttarifa;
-// 
-//        $vstatus = clspBLCabania::insertar_cabania($vflcabania);
-//        
-//        
-//        if($vstatus==1){
-//           $vdataResponse["messageNumber"]=$vstatus;
-//           
-//        }
-//        
-//        
-//        unset($vrequest,$vbody,$ventrada,$vflcabania,$vstatus);
-          
+        if ($vstatus == 1) {
+            $vdataResponse["messageNumber"] = $vstatus;
+        }
+
+
+        unset($vrequest, $vbody, $ventrada, $vflAsignarPaqueteActividad, $vstatus);
     } catch (Exception $exception) {
 
         $vdataResponse["messageNumber"] = -100;
@@ -110,7 +105,6 @@ $app->post("/paquetes", function ($vrequest) {
 
     echo json_encode($vdataResponse);
 });
-
 
 
 

@@ -12,6 +12,8 @@
  * @author Alejandro hdez g
  */
 include_once '../Model/capadatos/clspDLPaquete.php';
+include_once '../Model/capadatos/clspDLAsignarPaqueteActividad.php';
+
 include_once '../Model/conexcion.php';
 class clspBLPaquete {
     //put your code here
@@ -58,25 +60,25 @@ class clspBLPaquete {
         
     }
     
-      public static function insertar_paquete($vflpaquete) {
+      public static function insertar_paquete($vflAsignarPaqueteActividad) {
 
         $vmySql = new Mysql();
         $vmySql->AbrirConexion();
         $vmySql->start_transaction();
 
-        if ($result = clspDLUsuario::agregarUsuarios($vmySql, $vflturistas) == 1) {
+        if ($result = clspDLPaquete::insertarPaquete($vmySql, $vflAsignarPaqueteActividad) == 1) {
 
-            $turistas = clspDLTurista::agregarTurista($vmySql, $vflturistas);
+            $asignarActividad = clspDLAsignarPaqueteActividad::asignarPaqueteActividad($vmySql, $vflAsignarPaqueteActividad);
 
-            if ($turistas == 1) {
+            if ($asignarActividad == 1) {
 
                 $vmySql->commit();
-                echo 'se hizo commit';
+               // echo 'se hizo commit';
             } else {
 
                 $vmySql->rollback();
 
-                echo 'se hizo roollback';
+               // echo 'se hizo roollback';
                 return -1;
             }
         } 
