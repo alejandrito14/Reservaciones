@@ -21,6 +21,7 @@
 		<script type="text/javascript" src="../Resource/js/easing.js"></script>
 		<script type="text/javascript" src="../Resource/js/jquery.scrollTo-1.4.2-min.js"></script>
 		<script type="text/javascript" src="../Resource/js/jquery.cycle.all.js"></script>
+		<script type="text/javascript" src="../Resource/js/menu_pegajoso.js"></script>
 		<script type="text/javascript" src="../Resource/js/custom.js"></script>
 		
 		<!-- Isotope -->
@@ -220,24 +221,9 @@
 				<!-- wrapper-footer -->
 				<div class="wrapper">
 					<!-- footer-cols -->
-					<ul id="footer-cols">
-						<li class="col">
-							<h6>Pages</h6>
-							<ul>
-								<li class="page_item"><a href="index.html">Home</a></li>
-								<li class="page_item"><a href="features.html">Features</a></li>
-								<li class="page_item"><a href="blog.html">Blog</a></li>
-								<li class="page_item"><a href="portfolio.html">Portfolio</a></li>
-								<li class="page_item"><a href="gallery.html">Gallery</a></li>
-								<li class="page_item"><a href="contact.html">Contact</a></li>
-							</ul>
-						</li>
+					
 						
 						
-						<li class="col">
-							<h6>About the theme</h6>
-							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros.
-						</li>
 						
 					</ul>
 					<!-- ENDS footer-cols -->

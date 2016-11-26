@@ -1,6 +1,6 @@
 .col-md-55 {
   width: 50%;
-  margin-bottom: 10px; }
+  margin-bottom: 100px; }
 
 @media (min-width: 768px) {
   .col-md-55 {
@@ -13,7 +13,7 @@
     width: 28%; } }
 @media (min-width: 100px) and (max-width: 1270px) {
   table.tile_info span.right {
-    margin-right: 100px;
+    margin-right: 10px;
     float: left; } }
 .center-margin {
   margin: 0 auto;
@@ -23,20 +23,21 @@
   position: relative;
   min-height: 10px;
   float: left;
-  padding-right: 20px;
-  padding-left: 20px; }
+  padding-right: 10px;
+  padding-left: 10px; }
 
 .row {
-  margin-right: -20px;
-  margin-left: -20px; }
+  margin-right: -30px;
+  margin-left: -30px; }
 
 #x_content {
   
   margin-top: 101px;
-  margin-left: 100px;
-  margin-right: 20px;
-  min-height: 800px;
-  min-width: 900px;
+  margin-left: 10%;
+  margin-right: 2%;
+  margin-bottom: 500px;
+
+
    }
 
 /* *********  media gallery  **************************** */

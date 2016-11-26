@@ -21,6 +21,7 @@
 		<script type="text/javascript" src="../Resource/js/easing.js"></script>
 		<script type="text/javascript" src="../Resource/js/jquery.scrollTo-1.4.2-min.js"></script>
 		<script type="text/javascript" src="../Resource/js/jquery.cycle.all.js"></script>
+		<script type="text/javascript" src="../Resource/js/menu_pegajoso.js"></script>
 		<script type="text/javascript" src="../Resource/js/custom.js"></script>
 		
 		<!-- Isotope -->
@@ -112,7 +113,7 @@
 							<li><a href="">Servicios<span class="subheader">Selecciona un servicio</span></a>
 								<ul>
 									
-									<li><a href=""><span>Cabañas</span></a></li>
+									<li><a href="Cabanas_panel.php"><span>Cabañas</span></a></li>
 									<li><a href="Paquetes_panel.php"><span>Paquetes</span></a></li>
 									<li><a href="Actividades_panel.php"><span> Actividades</span></a></li>
 									
@@ -139,7 +140,7 @@
 			
 			
 
-			<!-- Slider -->
+			
 			
 				<div id="x_content">
 						
@@ -179,8 +180,86 @@
                           </div>
                         </div>
                       </div>
-          
+                     </div>
+          <div id="main">
+				<!-- wrapper-main -->
+				<div class="wrapper">
+					
+					<!-- headline -->
+					
+					<!-- ENDS headline -->
+					
+					<!-- content -->
+					<div id="content">
+						
+							
+							<div class="panes">
+							
+							
+								
+								
+							</div>
+							<!-- ENDS TABS -->
+		
+		
+		
+					</div>
+					<!-- ENDS content -->
+				</div>
+				<!-- ENDS wrapper-main -->
+			</div>
+			<!-- ENDS MAIN -->
 			
+			<!-- FOOTER -->
+			<div id="footer">
+				<!-- wrapper-footer -->
+				<div class="wrapper">
+					<!-- footer-cols -->
+					<ul id="footer-cols">
+						<li class="col">
+							<h6>Pages</h6>
+							<ul>
+								<li class="page_item"><a href="PrincipalTurista.php">Home</a></li>
+								<li class="page_item"><a href="features.html">Features</a></li>
+								<li class="page_item"><a href="blog.html">Blog</a></li>
+								<li class="page_item"><a href="portfolio.html">Portfolio</a></li>
+								<li class="page_item"><a href="gallery.html">Gallery</a></li>
+								<li class="page_item"><a href="contact.html">Contact</a></li>
+							</ul>
+						</li>
+						
+						
+						<li class="col">
+							<h6>About the theme</h6>
+							
+						</li>
+						
+					</ul>
+					<!-- ENDS footer-cols -->
+				</div>
+				<!-- ENDS wrapper-footer -->
+			</div>
+			<!-- ENDS FOOTER -->
+			<!-- Bottom -->
+			<div id="bottom">
+				<!-- wrapper-bottom -->
+				<div class="wrapper">
+					<div id="bottom-text">2011 Tres lagunas all rights reserved. <a href="http://www.luiszuno.com"> link.com</a> </div>
+					<!-- Social -->
+					<ul class="social ">
+						<li><a href="http://www.facebook.com" class="poshytip  facebook" title="Become a fan"></a></li>
+						<li><a href="http://www.twitter.com" class="poshytip twitter" title="Follow our tweets"></a></li>
+						<li><a href="http://www.dribbble.com" class="poshytip dribbble" title="View our work"></a></li>
+						<li><a href="http://www.addthis.com" class="poshytip addthis" title="Tell everybody"></a></li>
+						<li><a href="http://www.vimeo.com" class="poshytip vimeo" title="View our videos"></a></li>
+						<li><a href="http://www.youtube.com" class="poshytip youtube" title="View our videos"></a></li>
+					</ul>
+					<!-- ENDS Social -->
+					<div id="to-top" class="poshytip" title="To top"></div>
+				</div>
+				<!-- ENDS wrapper-bottom -->
+			</div>
+			<!-- ENDS Bottom -->
 		
 			
 	
