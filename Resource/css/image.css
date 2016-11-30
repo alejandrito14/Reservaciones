@@ -13,15 +13,7 @@
     width: 28%; } }
 @media (min-width: 100px) and (max-width: 1270px) {
   table.tile_info span.right {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    margin-right: 100px;
-=======
     margin-right: 10px;
->>>>>>> origin/master
-=======
-    margin-right: 10px;
->>>>>>> origin/master
     float: left; } }
 .center-margin {
   margin: 0 auto;
@@ -31,18 +23,8 @@
   position: relative;
   min-height: 10px;
   float: left;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  padding-right: 20px;
-  padding-left: 20px; }
-=======
   padding-right: 10px;
   padding-left: 10px; }
->>>>>>> origin/master
-=======
-  padding-right: 10px;
-  padding-left: 10px; }
->>>>>>> origin/master
 
 .row {
   margin-right: -30px;
@@ -51,26 +33,11 @@
 #x_content {
   
   margin-top: 101px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  margin-left: 100px;
-  margin-right: 20px;
-  min-height: 800px;
-  min-width: 900px;
-=======
   margin-left: 10%;
   margin-right: 2%;
   margin-bottom: 500px;
 
 
->>>>>>> origin/master
-=======
-  margin-left: 10%;
-  margin-right: 2%;
-  margin-bottom: 500px;
-
-
->>>>>>> origin/master
    }
 
 /* *********  media gallery  **************************** */

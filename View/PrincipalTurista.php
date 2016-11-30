@@ -25,7 +25,7 @@
 		<script type="text/javascript" src="../Resource/js/custom.js"></script>
 		
 		<!-- Isotope -->
-		<script src="../Resources/js/jquery.isotope.min.js"></script>
+		<script src="../Resource/js/jquery.isotope.min.js"></script>
 		
 		<!--[if IE]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -131,7 +131,7 @@
 							
 							<li><a href="">Reservaciones<span class="subheader">Reserva aqui</span></a>
 								<ul>
-									<li><a href=""><span> Reserva aqui</span></a></li>
+                                                                    <li><a href="turistaReservacion.php"><span> Reserva aqui</span></a></li>
 									<li><a href=""><span> Tus reservaciones </span></a></li>
 						
 								</ul>
@@ -154,7 +154,7 @@
 				<div id="slider-holder">
 					<div id="slider">
 						<a href="http://www.luiszuno.com"><img src="../Resource/images/01.jpg" title="Visit my web site regularly and get freebies each week!" alt="" /></a>
-						<a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz"><img src="../ResourceS/images/02.jpg" title="Support the freebies buying high quality premium themes from my portfolio at themeforest" alt="" /></a>
+						<a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz"><img src="../Resource/images/02.jpg" title="Support the freebies buying high quality premium themes from my portfolio at themeforest" alt="" /></a>
 					</div>
 				</div>
 			</div>
@@ -221,9 +221,24 @@
 				<!-- wrapper-footer -->
 				<div class="wrapper">
 					<!-- footer-cols -->
-					
+					<ul id="footer-cols">
+						<li class="col">
+							<h6>Pages</h6>
+							<ul>
+								<li class="page_item"><a href="PrincipalTurista.php">Home</a></li>
+								<li class="page_item"><a href="features.html">Features</a></li>
+								<li class="page_item"><a href="blog.html">Blog</a></li>
+								<li class="page_item"><a href="portfolio.html">Portfolio</a></li>
+								<li class="page_item"><a href="gallery.html">Gallery</a></li>
+								<li class="page_item"><a href="contact.html">Contact</a></li>
+							</ul>
+						</li>
 						
 						
+						<li class="col">
+							<h6>About the theme</h6>
+							
+						</li>
 						
 					</ul>
 					<!-- ENDS footer-cols -->
@@ -237,7 +252,7 @@
 			<div id="bottom">
 				<!-- wrapper-bottom -->
 				<div class="wrapper">
-					<div id="bottom-text">2011 Tres lagunas all rights reserved. <a href="http://www.luiszuno.com"> link.com</a> </div>
+					<div id="bottom-text">2016 Tres lagunas all rights reserved. <a href="http://www.luiszuno.com"> link.com</a> </div>
 					<!-- Social -->
 					<ul class="social ">
 						<li><a href="http://www.facebook.com" class="poshytip  facebook" title="Become a fan"></a></li>
