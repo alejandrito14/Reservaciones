@@ -5,11 +5,17 @@ var url = '../Controller/cabaniaController.php';
 $(document).ready(function () {
     // buscarlistar('');
     cargarTabla();
+  
     $("#btneditar").attr("onclick", "editarC()");
 
     $("#btnguardar").attr("onclick", "guardarc()");
+    
+    
+ 
 
 });
+
+
 
 
 

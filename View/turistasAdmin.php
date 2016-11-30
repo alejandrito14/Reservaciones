@@ -51,7 +51,7 @@
                             </div>
                             <div class="profile_info">
                                 <span>Welcome,</span>
-                                <h2>Crak</h2>
+                                <h2>Administrador</h2>
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
@@ -126,7 +126,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="../Resource/img/3.jpg" alt="">John Doe
+                                        <img src="../Resource/img/3.jpg" alt="">Administrador
                                         <span class=" fa fa-angle-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -176,7 +176,7 @@
                                             <a>
                                                 <span class="image"><img src="../Resource/img/3.jpg" alt="Profile Image" /></span>
                                                 <span>
-                                                    <span>John Smith</span>
+                                                    <span>John </span>
                                                     <span class="time">3 mins ago</span>
                                                 </span>
                                                 <span class="message">
@@ -330,19 +330,19 @@
 
                                     <label class="control-label">Nombre</label>
                                   
-                                    <input class="form-control" id="nombret" name="nombret"/>
+                                    <input class="form-control" id="txtnombre" name="txtnombre"/>
                                      <label class="control-label">Apellido p</label>
-                                    <input class="form-control" id="apellidop" name="apellidop"/>
+                                    <input class="form-control" id="txtapellidop" name="txtapellidop"/>
                                      <label class="control-label">Apellido m</label>
-                                    <input class="form-control" id="apelidom" name="apellidom"/>
+                                    <input class="form-control" id="txtapelidom" name="txtapellidom"/>
                                      <label class="control-label">Correo </label>
-                                    <input class="form-control" id="correo" name="correo"/>
+                                    <input class="form-control" id="txtcorreo" name="txtcorreo"/>
                                      <label class="control-label">Telefono </label>
-                                    <input class="form-control" id="telefono" name="telefono"/>
+                                    <input class="form-control" id="txttelefono" name="txttelefono"/>
                                     <label class="control-label">Ciudad </label>
-                                    <input class="form-control" id="ciudad" name="ciudad"/>
+                                    <input class="form-control" id="txtciudad" name="txtciudad"/>
                                     <label class="control-label">Fecha Nacimiento </label>
-                                    <input class="form-control" type="date" id="fecha" name="fecha"/>
+                                    <input class="form-control" type="date" id="txtfecha" name="txtfecha"/>
                                        <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                      <button id="btnguardar" class="btn btn-success" type="button"  >Guardar</button>                

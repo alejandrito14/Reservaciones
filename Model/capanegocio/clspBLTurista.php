@@ -63,11 +63,11 @@ class clspBLTurista {
         return 1;
     }
 
-    public static function iniciar_sesion($vflturistas) {
+    public static function iniciar_sesion($coleccion,$usuario,$contrasena) {
         $vmySql = new Mysql();
         $vmySql->AbrirConexion();
         
-        $resul = clspDLTurista::inicio_sesion($vmySql, $vflturistas);
+        $resul = clspDLTurista::inicio_sesion($vmySql,$coleccion,$usuario,$contrasena);
           
         
         if ($resul==1) {

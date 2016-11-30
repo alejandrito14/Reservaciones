@@ -48,7 +48,7 @@
                             </div>
                             <div class="profile_info">
                                 <span>Welcome,</span>
-                                <h2>Crak</h2>
+                                <h2>Administrador</h2>
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
@@ -123,7 +123,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="../Resource/img/3.jpg" alt="">John Doe
+                                        <img src="../Resource/img/3.jpg" alt="">Administrador
                                         <span class=" fa fa-angle-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -295,7 +295,6 @@
                             </div>
                         </div>
 
-
                     </div>
                     <!-- /top tiles -->
 
@@ -310,9 +309,80 @@
 
 
 
+                    
+                                 
+                    <!--Modal detalles-->
+                    
+                               <div class="modal fade" id="Detalles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel2">Detalles</h4>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                    <div id="content"></div>
+                                  <div id="veractividades"></div>
+                                                                      
+                                    
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                          <!--Modal ediatr-->
+                    
+                               <div class="modal fade" id="EditarP" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel2">Editar Paquete</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-group" id="formEditar" name="formEditar" >
+                                        <input class="form-control" id="paquete" type="hidden" name="paquete"/>
+     
+                                    <label class="control-label ">Nombre de Paquete</label>
+                                    <input class="form-control" id="txtnombre" type="text" name="txtnombre"/>
+                                     
+                                     <label class="control-label">Tarifa $</label>
+                                    <input class="form-control" id="txttarifa" type="text" name="txttarifa"/>
+                                    
+                                    <label class="control-label">Detalle</label>
+                                    <input class="form-control" id="txtdetalle" type="text" name="txtdetalle"/>
+                                    
+                                    
+                                       <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                     <button id="btnEditar" class="btn btn-success" type="button"  >Guardar cambios</button>                
+                                     </div>
+                                    
+                                    
+                                     </form>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
-
-
+                
+                
+                
+                
+                
+                    
 
 
 

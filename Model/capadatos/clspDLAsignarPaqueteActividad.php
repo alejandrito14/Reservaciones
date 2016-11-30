@@ -53,5 +53,30 @@ class clspDLAsignarPaqueteActividad {
             throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
         }
     }
+    
+    
+    
+    
+    
+    
+    
+        public static function eliminarPaqueteActividad($vmySql, $id) {
+        try {
+            $consulta = $vmySql->consulta("DELETE FROM c_asignacionpaqueteactividad WHERE id_paquete=\"$id\" ");
+
+            if ($consulta) {
+
+                if ($vmySql->ObtenerNumeroFilasAfectadas() != 1) {
+                    return 0;
+                }
+            }
+            unset($consulta, $vmySql);
+
+            return 1;
+        } catch (Exception $vexcepcion) {
+
+            throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
+        }
+    }
 
 }

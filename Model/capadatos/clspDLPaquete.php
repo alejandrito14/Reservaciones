@@ -12,6 +12,10 @@
  * @author Alejandro hdez g
  */
 include_once '../Model/capafisica/clspFLPaquete.php';
+include_once '../Model/capafisica/clspFLActividad.php';
+
+
+
 
 class clspDLPaquete {
     //put your code here
@@ -48,20 +52,46 @@ class clspDLPaquete {
         return 0;
     }
     
-     public static function eliminar_paquete($vmysql,$id){
-        try{
-        $consulta=$vmysql->consulta( "DELETE FROM c_paquete WHERE id_paquete=\"$id\" ");
-        
-        if ($vmysql->consulta($consulta)) {
+       public static function listaractividadesdepaquete($mysql, $id,$coleccion) {
 
-                if ($vmysql->ObtenerNumeroFilasAfectadas() != 1) {
+        $consulta = $mysql->consulta("SELECT c_actividad.id_actividad,c_actividad.cmpnombreActividad,c_actividad.cmptarifa FROM c_actividad INNER JOIN c_asignacionpaqueteactividad ON c_asignacionpaqueteactividad.id_actividad=c_actividad.id_actividad where c_asignacionpaqueteactividad.id_paquete=\"$id\"  ");
+
+        if ($mysql->num_rows($consulta) > 0) {
+            while ($resultados = $mysql->fetch_array($consulta)) {
+                $actividad = new clspFLActividad();
+
+                $actividad->idActividad = $resultados['id_actividad'];
+                $actividad->nombreActividad = $resultados['cmpnombreActividad'];
+                $actividad->tarifa = $resultados['cmptarifa'];
+                $actividad->detalle = $resultados['cmpdetalle'];
+
+
+
+
+                $coleccion->actividades [] = $actividad;
+                // echo json_encode($coleccion);
+            }
+            return 1;
+        }
+
+        return 0;
+    }
+    
+    
+    
+     public static function eliminar_paquete($vmySql,$id){
+        try{
+        $consulta=$vmySql->consulta( "DELETE FROM c_paquete WHERE id_paquete=\"$id\" ");
+        
+         if ($consulta) {
+
+                if ($vmySql->ObtenerNumeroFilasAfectadas() != 1) {
                     return 0;
                 }
             }
-         unset($consulta, $vmysql);
+            unset($consulta, $vmySql);
 
             return 1;
-        
         }catch(Exception $vexcepcion){
             
                throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());

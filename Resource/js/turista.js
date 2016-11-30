@@ -19,7 +19,7 @@ function registrar()
           data:JSON.stringify(datosform),
          succes:function(vresponse){
           
-
+            
         
          },
         

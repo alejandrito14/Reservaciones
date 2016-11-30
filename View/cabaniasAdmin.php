@@ -51,7 +51,7 @@
                             </div>
                             <div class="profile_info">
                                 <span>Welcome,</span>
-                                <h2>Crak</h2>
+                                <h2>Administrador</h2>
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
@@ -101,7 +101,7 @@
                             <a data-toggle="tooltip" data-placement="top" title="Settings">
                                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                             </a>
-                            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <a data-toggle="tooltip" data-placement="top" title="FullScreen" id="view-fullscreen">
                                 <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
                             </a>
                             <a data-toggle="tooltip" data-placement="top" title="Lock">
@@ -126,7 +126,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="../Resource/img/3.jpg" alt="">John Doe
+                                        <img src="../Resource/img/3.jpg" alt="">Administrador
                                         <span class=" fa fa-angle-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -517,6 +517,8 @@
                 function gd(year, month, day) {
                     return new Date(year, month - 1, day).getTime();
                 }
+                
+                
             });
         </script>
         <!-- /Flot -->

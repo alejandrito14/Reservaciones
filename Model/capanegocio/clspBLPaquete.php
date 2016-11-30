@@ -25,6 +25,9 @@ class clspBLPaquete {
     function __destruct() {
         
     }
+    
+    
+   
 
     public static function listar_paquete($coleccion) {
 
@@ -39,22 +42,44 @@ class clspBLPaquete {
         $mysql->CerrarConexion();
     }
     
-        public static function eliminar_paquete($id){
-        $vmysql=new Mysql();
-        $vmysql->AbrirConexion();
+    
+    public static function  listaractividadesdepaquete($id,$coleccion) {
+
+
+        $mysql = new Mysql();
+        $mysql->AbrirConexion();
+
+        $result = clspDLPaquete::listaractividadesdepaquete($mysql, $id, $coleccion);
         
-        $result=  clspDLPaquete::eliminar_paquete($vmysql, $id);
-        
-        if($result==1){
-            
-             return $result;
-            
-        }else{
-            
-            return 0;
-        }
-       
+        return $result;
       
+        $mysql->CerrarConexion();
+    }
+    
+    
+        public static function eliminar_paquete($id){
+          $vmySql = new Mysql();
+        $vmySql->AbrirConexion();
+        $vmySql->start_transaction();
+
+        
+   if($eliminarPaquete = clspDLAsignarPaqueteActividad::eliminarPaqueteActividad($vmySql, $id) ==1 ){
+
+        
+        $result=  clspDLPaquete::eliminar_paquete($vmySql, $id);
+   
+          if ($result == 1) {
+
+                $vmySql->commit();
+               // echo 'se hizo commit';
+            } else {
+
+                $vmySql->rollback();
+
+               // echo 'se hizo roollback';
+                return -1;
+            }
+        } 
         $mysql->CerrarConexion();
         
         

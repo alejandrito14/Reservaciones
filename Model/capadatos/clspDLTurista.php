@@ -76,29 +76,40 @@ class clspDLTurista {
 
 
             unset($vsql, $vmySql);
-             echo '1';
+           
             return 1;
         } catch (Exception $vexcepcion) { //It catches exception /It returns exception code catched
             throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
+//            $vflturistas->idusuario = $resultados['id_usuario'];
         }
     }
 
-    public static function inicio_sesion($vmySql, $vflturistas) {
+    public static function inicio_sesion($vmySql,$coleccion,$usuario,$contrasena) {
+        try {
 
+            $consulta = $vmySql->consulta("SELECT * FROM `c_usuario` WHERE cmpcorreo=\"$usuario\" AND cmpcontrasena=\"$contrasena\"");
 
-        $consulta = $vmySql->consulta("SELECT * FROM `c_usuario` WHERE cmpcorreo=\"$vflturistas->correo\" AND cmpcontrasena=\"$vflturistas->contrasena\"");
-
-        if ($vmySql->num_rows($consulta) == 0) {
-
-
-            return 0;
-        } else {
+            if ($vmySql->num_rows($consulta) > 0) {
             while ($resultados = $vmySql->fetch_array($consulta)) {
+                $turista = new clspFLTurista();
 
-                $vflturistas->idusuario = $resultados['id_usuario'];
-                // echo json_encode($vflturistas);
+
+                $turista->idusuario = $resultados['id_usuario'];
+                $turista->nombre=$resultados['cmpnombre'];
+                $turista->correo = $resultados['cmpcorreo'];
+               
+
+                $coleccion->turistas [] = $turista;
+                //  echo json_encode($coleccion);
             }
             return 1;
+        }
+            unset($vmySql);
+            return 0;
+        
+        } catch (Exception $vexcepcion) {
+
+            throw new Exception($vexcepcion->getMessage(), $vexcepcion->getCode());
         }
     }
 

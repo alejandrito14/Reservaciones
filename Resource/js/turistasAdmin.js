@@ -42,6 +42,7 @@ function cargarTabla() {
 
 
 function mostrar(datos) {
+   alert(datos);
 
     var d = datos.split("*");
     $("#turista").val(d[0]);

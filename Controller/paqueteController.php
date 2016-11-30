@@ -10,6 +10,8 @@
 
 require_once ('../slim-3.3.0/autoload.php');
 require_once (dirname(dirname(__FILE__)) . '/Model/capafisica/clscFLPaquete.php');
+require_once (dirname(dirname(__FILE__)) . '/Model/capafisica/clscFLActividad.php');
+
 
 require_once (dirname(dirname(__FILE__)) . '/Model/capafisica/clscFLPaquete.php');
 
@@ -53,22 +55,23 @@ $app->delete("/paquetes/{idpaquete}", function ($vresponse) {
     $id=$vresponse->getAttribute('idpaquete');
     
   
-    $dataResponse=array();
+    $vdataResponse=array();
     try{
         $obj=new clspBLPaquete();
-        $result=$obj->eliminar_paquete($id);
-      if($result=1){
-          
-          echo 'hola';
-      }
+        $vstatus=$obj->eliminar_paquete($id);
+        
+       if ($vstatus = 1) {
+
+              $vdataResponse["messageNumber"] =$vstatus;
+        }
                              
         }catch (Exception $exception){
-        $dataResponse["cabania"]=-100;
+        $vdataResponse["paquete"]=-100;
         
         
     }
     
-     echo json_encode($dataResponse );
+     echo json_encode($vdataResponse );
 });
 
 
@@ -108,7 +111,28 @@ $app->post("/paqueteActividad", function ($vrequest) {
 
 
 
+
+$app->get("/paquetesactividades/{idpaquete}", function ($vresponse) {
     
+    $id=$vresponse->getAttribute('idpaquete');
+try{
+    $obj = new clspBLPaquete();
+    $coleccion = new clscFLActividad();
+    $result = $obj->listaractividadesdepaquete($id,$coleccion);
+    if ($result == 1) {
+        
+        $dataResponse['actividades']=$coleccion;
+    }
+  }catch(Exception $exception){
+
+$dataResponse["actividades"]=-100;
+
+  }
+
+  echo json_encode($dataResponse );
+
+
+});
     
     
 

@@ -16,7 +16,8 @@
     <link type="text/css" rel="stylesheet" href="../Resource/css/materialize.min.css"  media="screen,projection"/>
     <script type="text/javascript" src="../Resource/js/materialize.min.js"></script>
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+      <script src="../Resource/js/jquery-functions.js"></script>
+      <script src="../Resource/js/ingreso_turista.js"></script>
     <!-- Font Awesome -->
     <link href="../Resource/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
@@ -48,7 +49,7 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-              <form id="formingreso" name="formingreso" method="POST">
+              <form id="formingreso" name="formingreso" >
               <h1>Login </h1>
               <div>
                   <input type="text" class="form-control" id="txtemail" name="txtemail" placeholder="Email" required="" />
@@ -57,9 +58,9 @@
                   <input type="password" class="form-control" id="txtcontrasena" name="txtcontrasena" placeholder="Password" required="" />
               </div>
               <div>
-                  <button id="btningreso" type="submit" class="btn btn-success"   >INGRESAR</button>                
+                  <button id="btningreso" type="button" class="btn btn-success"   >INGRESAR</button>                
                 
-                
+                  <div id="errorMessage"></div>
                 <a class="reset_pass" href="#">Perdiste tu contraseña?</a>
               </div>
 
@@ -85,8 +86,7 @@
       
       </div>
     </div>
-      <script src="../Resource/js/jquery-functions.js"></script>
-      <script src="../Resource/js/ingreso_turista.js"></script>
+    
 
   </body>
 </html>

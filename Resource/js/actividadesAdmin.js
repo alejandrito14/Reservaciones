@@ -35,7 +35,7 @@ function cargarTabla() {
                     + "<td>" + actividades.nombreActividad + "</td>"
                     + "<td> $ " + actividades.tarifa + "</td>"
                     + "<td> " + actividades.detalle + "</td>"
-                    + "<td><button type='button 'class='btn btn-danger btn-sm'  onclick='eliminar(" + '"' + actividades.idActividad + '"' + ")' >Eliminar</button> <buton type='button ' class='btn btn-info btn-sm' data-toggle='modal' data-target='#EditarA' onclick='mostrar(" + '"' + datos + '"' + ");' >Editar</button> </td>"
+                    + "<td><button type='button 'class='btn btn-danger btn-sm'  onclick='eliminar(" + '"' + actividades.idActividad + '"' + ")' >Eliminar</button> <buton type='button ' class='btn btn-info btn-sm' data-toggle='modal' data-target='#EditarP' onclick='mostrar(" + '"' + datos + '"' + ");' >Editar</button> </td>"
                     + "</tr>";
 
             $(actividades).appendTo("#tablaActividad tbody");

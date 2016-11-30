@@ -99,7 +99,7 @@ $app->post("/turistas", function ($vrequest) {
 });
 
 
-$app->post("/login", function ($vrequest) {
+$app->get("/login", function ($vrequest) {
 
     $vdataResponse = array();
     try {
@@ -110,21 +110,50 @@ $app->post("/login", function ($vrequest) {
         $vflturistas = new clspFLTurista();
         $vflturistas->correo = $ventrada->txtemail;
         $vflturistas->contrasena = $ventrada->txtcontrasena;
-        // var_dump(json_encode($vflturistas));
-        $vstatus = clspBLTurista::iniciar_sesion($vflturistas);
-
-        if ($vstatus == 1) {
-                echo "ok";
-        } else {
-            echo "error";
-        }
+         var_dump(json_encode($vflturistas));
+//        $vstatus = clspBLTurista::iniciar_sesion($vflturistas);
+//
+//        if ($vstatus == 1) {
+//                $vdataResponse["messageNumber"] =$vstatus;
+//        } 
     } catch (Exception $exception) {
 
         $vdataResponse["messageNumber"] = -100;
     }
      
-  // echo json_encode($vdataResponse);
+  //echo json_encode($vdataResponse);
 });
+
+//$app->get("/login/{usuario}/{contrasena}", function ($vresponse) {
+//
+//            $vdataResponse = array();
+//            $usuario=$vresponse->getAttribute('usuario');
+//            $contrasena=$vresponse->getAttribute('contrasena');
+//            
+//         //   var_dump($usuario);
+//    try {
+//           
+//
+//             $obj = new clspBLTurista();
+//             $coleccion = new clscFLTurista();
+//            $vstatus = $obj->iniciar_sesion($coleccion,$usuario, $contrasena);
+//        
+//       
+//        
+//        //var_dump(json_encode($vflturistas));
+//       // $vstatus = clspBLTurista::iniciar_sesion($usuario,$contrasena);
+////
+//        if ($vstatus == 1) {
+//                $vdataResponse["turista"] =$coleccion;
+//        } 
+//    } catch (Exception $exception) {
+//
+//        $vdataResponse["messageNumber"] = -100;
+//    }
+//     
+//   echo json_encode($vdataResponse);
+//});
+
 
 
 

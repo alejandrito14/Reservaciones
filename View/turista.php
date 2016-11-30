@@ -29,7 +29,7 @@
                 <div class="nav-wrapper green">
                     <a href="#!" class="brand-logo"><i class="material-icons"><img src="../Resource/img/logo.png" class="imagen"></i></a>
                     <ul class="right hide-on-med-and-down">
-                    
+                        <a href="login-turista.php">Entrar</a>
                     </ul>
                 </div>
             </nav>
