@@ -221,9 +221,24 @@
 				<!-- wrapper-footer -->
 				<div class="wrapper">
 					<!-- footer-cols -->
-					
+					<ul id="footer-cols">
+						<li class="col">
+							<h6>Pages</h6>
+							<ul>
+								<li class="page_item"><a href="PrincipalTurista.php">Home</a></li>
+								<li class="page_item"><a href="features.html">Features</a></li>
+								<li class="page_item"><a href="blog.html">Blog</a></li>
+								<li class="page_item"><a href="portfolio.html">Portfolio</a></li>
+								<li class="page_item"><a href="gallery.html">Gallery</a></li>
+								<li class="page_item"><a href="contact.html">Contact</a></li>
+							</ul>
+						</li>
 						
 						
+						<li class="col">
+							<h6>About the theme</h6>
+							
+						</li>
 						
 					</ul>
 					<!-- ENDS footer-cols -->
