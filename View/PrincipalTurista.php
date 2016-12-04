@@ -25,7 +25,7 @@
 		<script type="text/javascript" src="../Resource/js/custom.js"></script>
 		
 		<!-- Isotope -->
-		<script src="../Resource/js/jquery.isotope.min.js"></script>
+		<script src="../Resources/js/jquery.isotope.min.js"></script>
 		
 		<!--[if IE]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,7 +40,7 @@
 		<![endif]-->
 		<!-- ENDS JS -->
 		
-		
+		 
 		<!-- Nivo slider -->
 		<link rel="stylesheet" href="../Resource/css/nivo-slider.css" type="text/css" media="screen" />
 		<script src="../Resource/js/nivo-slider/jquery.nivo.slider.js" type="text/javascript"></script>
@@ -77,9 +77,15 @@
 		
 		<!-- Fancybox -->
 		<link rel="stylesheet" href="../Resource/js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
 		<script type="text/javascript" src="../Resource/js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 		<!-- ENDS Fancybox -->
 		
+
+		 
+       
+        <!-- Custom Theme Style -->
+        <link href="../Resource/build/css/custom3.css" rel="stylesheet">
 		
 
 	</head>
@@ -91,16 +97,7 @@
 				<!-- wrapper-header -->
 				<div class="wrapper">
 					<a href="index.html"><img id="logo" src="../Resource/img/logo.png" alt="Nova" /></a>
-					<!-- search -->
-					<div class="top-search">
-						<form  method="get" id="searchform" action="#">
-							<div>
-								<input type="text" value="Search..." name="s" id="s" onfocus="defaultInput(this)" onblur="clearInput(this)" />
-								<input type="submit" id="searchsubmit" value=" " />
-							</div>
-						</form>
-					</div>
-					<!-- ENDS search -->
+					
 				</div>
 				<!-- ENDS wrapper-header -->					
 			</div>
@@ -118,7 +115,7 @@
 					<div class="wrapper">
 						<!-- Navigation -->
 						<ul id="nav" class="sf-menu">
-							<li class="current-menu-item"><a href="Principal.php">Home<span class="subheader">Welcome</span></a></li>
+							<li class="current-menu-item"><a href="PrincipalTurista.php">Home<span class="subheader">Welcome</span></a></li>
 							<li><a href="">Servicios<span class="subheader">Selecciona un servicio</span></a>
 								<ul>
 									
@@ -131,16 +128,43 @@
 							
 							<li><a href="">Reservaciones<span class="subheader">Reserva aqui</span></a>
 								<ul>
-                                                                    <li><a href="turistaReservacion.php"><span> Reserva aqui</span></a></li>
+									<li><a href="turistaReservacion.php"><span> Reserva aqui</span></a></li>
 									<li><a href=""><span> Tus reservaciones </span></a></li>
 						
 								</ul>
 							</li>
 							
 						</ul>
+					
+
+                        <!-- ends top -->
 						<!-- Navigation -->
 					</div>
 					<!-- wrapper-menu -->
+						 <!-- top -->
+
+                    <div class="wrapper2 navbar-right ">
+
+                        <!-- user -->
+                        <ul id="nav2" class="sf-menu ">
+                            
+                            <li><a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><img src="../Resource/img/3.jpg" alt="">Usuario<span class="subheader">Nombre de completo</span></a>
+
+                                <ul>
+                                    
+                                    <li><a href=""><span>mensages</span></a></li>
+                                    <li><a href=""><span>cerrar sesion</span></a></li>
+                                   
+                                </ul>
+                            </li>
+                            
+                            
+                            
+                        </ul>
+
+
+                    
+                    </div>
 				</div>
 				<!-- ENDS menu-holder -->
 			</div>
@@ -153,8 +177,10 @@
 			<div id="slider-block">
 				<div id="slider-holder">
 					<div id="slider">
-						<a href="http://www.luiszuno.com"><img src="../Resource/images/01.jpg" title="Visit my web site regularly and get freebies each week!" alt="" /></a>
-						<a href="http://themeforest.net/user/Ansimuz/portfolio?ref=ansimuz"><img src="../Resource/images/02.jpg" title="Support the freebies buying high quality premium themes from my portfolio at themeforest" alt="" /></a>
+						<a href="http://www.luiszuno.com"><img src="../Resource/images/01.jpg" title="Visita nuestra pagina!!" alt="" /></a>
+						<img src="../Resource/images/02.jpg" title="Ven y conoce nuestras instalaciones!!" alt="" /></a>
+						<img src="../Resource/images/03.jpg" title="Podras disfrutar de varios servicios " alt="" /></a>
+
 					</div>
 				</div>
 			</div>
@@ -189,10 +215,10 @@
 								<!-- Information  -->
 								<div>
 									<div class="plain-text">
-										<h6>Pellentesque habitant morbi tristique senectus et netus et malesuada.</h6> 
-										<p>Fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. </p>
-										<p>Fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.Fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper <a href="single.html">This is a link</a>. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. </p>
-										<a href="single.html" class="link-button"><span>Read more &#8594;</span></a>
+										<h6>Centro ecoturistico Tres lagunas</h6> 
+										<p>En el Centro Ecoturístico Tres Lagunas se realizan caminatas en senderos por la Selva Lacandona, paseo en cayucos a través de las lagunas, recorridos en bicicleta, observación nocturna de cocodrilos y visitas guiadas a Bonampak. </p>
+										<p>Se localiza en las Montañas del Oriente, Se puede llegar desde Palenque, en coche, por la carretera fronteriza del sur. Se necesitan recorrer 133 kms. para llegar al centro ecoturístico. También hay autobuses y taxis que salen de Palenque y van a Benemérito o San Javier por la carretera fronteriza del Sur, y que les pueden llevar en 2 h 30 – 3h.</p>
+										
 									</div>
 								</div>
 								<!-- ENDS Information -->
@@ -215,7 +241,6 @@
 			<!-- ENDS MAIN -->
 			
 			
-			
 			<!-- FOOTER -->
 			<div id="footer">
 				<!-- wrapper-footer -->
@@ -226,11 +251,11 @@
 							<h6>Pages</h6>
 							<ul>
 								<li class="page_item"><a href="PrincipalTurista.php">Home</a></li>
-								<li class="page_item"><a href="features.html">Features</a></li>
-								<li class="page_item"><a href="blog.html">Blog</a></li>
-								<li class="page_item"><a href="portfolio.html">Portfolio</a></li>
-								<li class="page_item"><a href="gallery.html">Gallery</a></li>
-								<li class="page_item"><a href="contact.html">Contact</a></li>
+								<li class="page_item"><a href="">Features</a></li>
+								<li class="page_item"><a href="">Blog</a></li>
+								<li class="page_item"><a href="">Portfolio</a></li>
+								<li class="page_item"><a href="">Gallery</a></li>
+								<li class="page_item"><a href="">Contact</a></li>
 							</ul>
 						</li>
 						
@@ -252,7 +277,7 @@
 			<div id="bottom">
 				<!-- wrapper-bottom -->
 				<div class="wrapper">
-					<div id="bottom-text">2016 Tres lagunas all rights reserved. <a href="http://www.luiszuno.com"> link.com</a> </div>
+					<div id="bottom-text">2011 Tres lagunas all rights reserved. <a href="http://www.luiszuno.com"> link.com</a> </div>
 					<!-- Social -->
 					<ul class="social ">
 						<li><a href="http://www.facebook.com" class="poshytip  facebook" title="Become a fan"></a></li>

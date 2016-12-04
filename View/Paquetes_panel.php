@@ -80,6 +80,8 @@
 		<script type="text/javascript" src="../Resource/js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 		<!-- ENDS Fancybox -->
 		<link rel="stylesheet" media="screen" href="../Resource/css/image.css" />
+		<!-- Custom Theme Style -->
+        <link href="../Resource/build/css/custom3.css" rel="stylesheet">
 		
 
 	</head>
@@ -122,7 +124,7 @@
 							
 							<li><a href="">Reservaciones<span class="subheader">Reserva aqui</span></a>
 								<ul>
-                                                                    <li><a href="turistaReservacion.php"><span> Reserva aqui</span></a></li>
+									<li><a href="turistaReservacion.php"><span> Reserva aqui</span></a></li>
 									<li><a href=""><span> Tus reservaciones </span></a></li>
 						
 								</ul>
@@ -132,6 +134,29 @@
 						<!-- Navigation -->
 					</div>
 					<!-- wrapper-menu -->
+					<div class="wrapper2 navbar-right ">
+
+	                        <!-- top user -->
+	                        <ul id="nav2" class="sf-menu ">
+	                            
+	                            <li><a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><img src="../Resource/img/3.jpg" alt="">Usuario<span class="subheader">Nombre de completo</span></a>
+
+	                                <ul>
+	                                    
+	                                    <li><a href=""><span>mensages</span></a></li>
+	                                    <li><a href=""><span>cerrar sesion</span></a></li>
+	                                   
+	                                </ul>
+	                            </li>
+	                            
+	                            
+	                            
+	                        </ul>
+
+
+	                    
+	                    </div>
+	                    <!-- ends top user -->
 				</div>
 				<!-- ENDS menu-holder -->
 			</div>
@@ -207,6 +232,7 @@
 					<!-- ENDS content -->
 				</div>
 				<!-- ENDS wrapper-main -->
+				<
 			</div>
 			<!-- ENDS MAIN -->
 			

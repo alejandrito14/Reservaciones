@@ -39,6 +39,11 @@ body {
 	margin: 0px auto;
 	position: relative;
 }
+.wrapper2{
+	width: 100px;
+	margin: 0px auto;
+	position: relative;
+}
 
 #header{
 	height: 150px;
@@ -65,6 +70,12 @@ body {
 	top: 20px;
 	left: 10px;
 }
+#user{
+	position: absolute;
+	top: 20px;
+	left: 10px;
+}
+
 
 #content a{
 	color: #37b2d1;
@@ -139,6 +150,7 @@ body {
 	
 	width:100%;
 }
+
 /* NAVIGATION --------------------------------------------------------*/
 
 
@@ -150,6 +162,16 @@ body {
 	height: 89px;
 	width: 906px;
 }
+#nav2{
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0;
+	height: 89px;
+	width: 220px;
+}
+
+
 
 #nav>li{
 	display: block;
@@ -158,11 +180,31 @@ body {
 	margin-right: 32px;
 }
 
+
+#nav2>li{
+	display: block;
+	float: right;
+	height: 100%;
+	width: 100%;
+}
+
+
+
 #nav>li:first-child{}
+#nav2>li:first-child{}
+
 
 #nav>li>a{
 	display: block;
 	font-size: 23px;
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-top: 20px;
+	
+}
+#nav2>li>a{
+	display: block;
+	font-size: 15px;
 	color: #FFFFFF;
 	text-decoration: none;
 	margin-top: 20px;
@@ -176,7 +218,13 @@ body {
 	font-style: italic;
 	margin-top: 10px;
 }
-
+#nav2>li>a>span.subheader{
+	display: block;
+	font-size: 14px;
+	color: #CAF098;
+	font-style: normal;
+	margin-top: 10px;
+}
 #nav>li.current-menu-item{
 	background: url(../img/menu-arrow.png) no-repeat center bottom;
 }
@@ -185,12 +233,26 @@ body {
 #nav>li:hover>a{
 	color: #D6D6D6;
 }
-
+#nav2>li:hover>a{
+	color: #D6D6D6;
+}
 /* sub navigation */
 
 #nav>li ul{
 	display: block;
 	margin-top: 33px;
+	background: green;
+	border-radius: 0px 10px 0px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	
+	-webkit-box-shadow: 0px 3px 2px rgba(0,0,0,0.4); 
+	-moz-box-shadow: 0px 3px 2px rgba(0,0,0,0.4); 
+	box-shadow: 0px 3px 2px rgba(0,0,0,0.4); 
+}
+#nav2>li ul{
+	display: block;
+	margin-top: 40px;
 	background: green;
 	border-radius: 0px 10px 0px 10px;
 	-moz-border-radius: 0px 0px 10px 10px;
@@ -208,6 +270,13 @@ body {
 	-webkit-border-radius: 0px 10px 10px 10px;
 }
 
+#nav2>li>ul ul{
+	margin-top: 0px;
+	border-radius: 0px 10px 10px 10px;
+	-moz-border-radius: 0px 10px 10px 10px;
+	-webkit-border-radius: 0px 10px 10px 10px;
+}
+
 #nav>li ul li a{
 	display: block;
 	padding: 10px 15px;
@@ -216,8 +285,18 @@ body {
 	color: #fff;
 	text-decoration: none;
 }
-
+#nav2>li ul li a{
+	display: block;
+	padding: 10px 15px;
+	display: block;
+	font-size: 11px;
+	color: #fff;
+	text-decoration: none;
+}
 #nav>li ul li a span{
+	display: block;
+}
+#na2v>li ul li a span{
 	display: block;
 }
 
@@ -225,13 +304,20 @@ body {
 	background: #76B000;
 	color: #fff;
 }
-
+#nav2>li ul li a:hover{
+	background: #76B000;
+	color: #fff;
+}
 #nav>li ul li:last-child a:hover{ /* last item its rounded at bottom */
 	border-radius: 0px 0px 10px 10px;
 	-moz-border-radius: 0px 0px 10px 10px;
 	-webkit-border-radius: 0px 0px 10px 10px;
 }
-
+#nav2>li ul li:last-child a:hover{ /* last item its rounded at bottom */
+	border-radius: 0px 0px 10px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+}
 
 /* breadcrumbs --------------------------------------------------------*/
 

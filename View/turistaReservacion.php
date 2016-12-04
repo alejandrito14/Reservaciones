@@ -9,13 +9,6 @@
 
         <title>Tres lagunas |Turista reservacion </title>
         <script src="../Resource/js/jquery.min.js"></script>
-         <script src="../Resource/js/jquery-functions.js"></script>
-        <script src="../Resource/js/reservacion.js"></script> 
-       
-        <script src="../Resource/js/cabanias.js"></script>
-        <script src="../Resource/js/actividades.js"></script>
-        <script src="../Resource/js/paquetes.js"></script>
-        
 <!-- CSS -->
         <link rel="stylesheet" href="../Resource/css/style_1.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="../Resource/css/social-icons.css" type="text/css" media="screen" />
@@ -70,7 +63,7 @@
         
         <!-- superfish -->
         <link rel="stylesheet" media="screen" href="../Resource/css/superfish.css" /> 
-        <link rel="stylesheet" media="screen" href="../Resource/css/superfish-left.css" /> 
+  
         <script type="text/javascript" src="../Resource/js/superfish-1.4.8/js/hoverIntent.js"></script>
         <script type="text/javascript" src="../Resource/js/superfish-1.4.8/js/superfish.js"></script>
         <script type="text/javascript" src="../Resource/js/superfish-1.4.8/js/supersubs.js"></script>
@@ -83,7 +76,7 @@
         <!-- ENDS poshytip -->
         
         <!-- Tweet -->
-        <link rel="stylesheet" href="../Resource/css/jquery.tweet.css" media="all"  type="text/css"/> 
+  
         <script src="../Resource/js/tweet/jquery.tweet.js" type="text/javascript"></script> 
         <!-- ENDS Tweet -->
         
@@ -92,14 +85,11 @@
         <script type="text/javascript" src="../Resource/js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
         <!-- ENDS Fancybox -->
 
- 
-        
-        <!-- Bootstrap -->
-        <link href="../Resource/css/bootstrap.min.css" rel="stylesheet">
-                <script src="../Resource/js/bootstrap.min.js"></script>
 
+      
         <!-- Materialize -->
-       
+        <link type="text/css" rel="stylesheet" href="../Resource/css/materialize.min.css"  media="screen,projection"/>
+        <script type="text/javascript" src="../Resource/js/materialize.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- Font Awesome -->
@@ -110,7 +100,7 @@
         <link href="../Resource/css/animate.min.css" rel="stylesheet">
 
         <!-- Custom Theme Style -->
-        <link href="../Resource/build/css/custom.css" rel="stylesheet">
+        <link href="../Resource/build/css/custom3.css" rel="stylesheet">
     </head>
 
     <body class="login">
@@ -121,7 +111,7 @@
                 <div id="header">
                     <!-- wrapper-header -->
                     <div class="wrapper">
-                        <a href="PrincipalTurista"><img id="logo" src="../Resource/img/logo.png" alt="Nova" /></a>
+                        <a href="PrincipalTurista.php"><img id="logo" src="../Resource/img/logo.png" alt="Nova" /></a>
                         
                     </div>
                     <!-- ENDS wrapper-header -->                    
@@ -156,12 +146,41 @@
                             </li>
                             
                         </ul>
+
+
                         <!-- Navigation -->
                     </div>
+                     <!-- top -->
+
+                     <div class="wrapper2 navbar-right ">
+
+                        <!-- user -->
+                        <ul id="nav2" class="sf-menu ">
+                            
+                            <li><a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><img src="../Resource/img/3.jpg" alt="">Usuario<span class="subheader">Nombre de completo</span></a>
+
+                                <ul>
+                                    
+                                    <li><a href=""><span>mensages</span></a></li>
+                                    <li><a href=""><span>cerrar sesion</span></a></li>
+                                   
+                                </ul>
+                            </li>
+                            
+                            
+                            
+                        </ul>
+
+
+                        <!-- user -->
+                    </div>
+
+                        <!-- ends top -->
                     <!-- wrapper-menu -->
                 </div>
                 <!-- ENDS menu-holder -->
             </div>
+
             <!-- ENDS Menu -->
 
 
@@ -175,25 +194,24 @@
                         <section class="login_content"> 
                             <h1>Reservacion </h1>
 
+                            <label for="fecha_na">Fecha de Entrada</label>
+                            <div class="input-field col s4">
 
-                            <div class="container">
-                                <label class="control-label" for="fecha_na">Fecha de Entrada</label>
+                                <input id="fecha_na" type="date" class="datepicker">
 
-                                <input  id="fecha_na" type="date" class="form-control">
+                            </div>
+                            <label for="fecha_na">Fecha de salida</label>
+                            <div class="input-field col s4">
 
-                           
-                                <label class="control-label" for="fecha_na">Fecha de salida</label>
-                            
+                                <input id="fecha_na" type="date" class="datepicker">
 
-                                <input id="fecha_na" type="date" class="form-control">
+                            </div>
 
-                          
-                                <label class="control-label" for="nombre">Cantidad de personas</label>
-
-                                <input id="cantidad" type="text" class="form-control">
-                          
-                             </div>
-                            <div class="container">
+                            <div class="input-field col s4">
+                                <input id="cantidad" type="text" class="validate">
+                                <label for="nombre">Cantidad de personas</label>
+                            </div>
+                            <div>
                                 <button id="btnconsulta"  class="btn btn-success"  type="button"   >Consultar disponibilidad</button>                
                             </div>
                         </section>
@@ -360,6 +378,12 @@
 
         </form>
 
+        <script src="../Resource/js/jquery-functions.js"></script>
+        <script src="../Resource/js/reservacion.js"></script> 
        
+        <script src="../Resource/js/cabanias.js"></script>
+        <script src="../Resource/js/actividades.js"></script>
+        <script src="../Resource/js/paquetes.js"></script>
+
     </body>
 </html>
